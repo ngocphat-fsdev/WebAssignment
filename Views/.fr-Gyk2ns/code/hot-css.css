@@ -1,0 +1,132 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    max-width: 1110px;
+    margin: 0  auto;
+    position: relative;
+}
+
+ul{
+    margin-bottom: 0;
+}
+
+.list-content{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #eee;
+    position: relative;
+}
+
+.list-content li{
+    list-style-type: none;
+}
+
+.list-content a{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    border-bottom: solid #999 thin;
+    width: 700px;
+    margin-right: 30px;
+}
+
+.img-container img{
+    height: 100px;
+    width: 150px;
+}
+
+.line-ellipsis{
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.ddd{
+    font-size: 13px;
+    font-style: italic;
+}
+
+.g_child_count{
+    font-size: 12px;
+}
+
+.g_child_count span{
+    border-right: solid #999 thin;
+    padding-right: 5px;
+}
+
+.g_child_count>span:nth-child(2){
+    color: red;
+}
+
+.g_child_count>span:nth-child(4){
+    color: green;
+}
+
+.g_child_count>span:nth-child(6){
+    color: blue;
+}
+
+.date{
+    float: right;
+    font-style: italic;
+    color: #999;
+    font-size: 12px;
+}
+
+/*Responsive*/
+@media only screen and (min-width: 320px){
+    .w3-section{
+        display: none;
+    }
+    .list-content a{
+        display: grid;
+        grid-template-columns: auto;
+        width: auto;
+    }
+}
+
+@media only screen and (min-width: 320px){
+    .w3-section{
+        display: none;
+    }
+    .list-content a{
+        display: grid;
+        grid-template-columns: auto;
+        width: auto;
+    }
+}
+
+@media only screen and (min-width: 568px){
+    .w3-section{
+        display: none;
+    }
+    .list-content a{
+        display: grid;
+        grid-template-columns: auto;
+        width: auto;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .w3-section{
+        display: none;
+    }
+    .list-content a{
+        display: grid;
+        grid-template-columns: auto;
+        width: auto;
+    }
+}
+
+@media only screen and (min-width: 990px){
+    .list-content a{
+        display: grid;
+        width: auto;
+        grid-template-columns: 30% 70%;
+    }
+    .w3-section{
+        display: block;
+    }
+}

@@ -1,0 +1,180 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.row{
+    padding: 0;
+}
+.res-photo{
+    margin: 0;
+}
+
+@media only screen and (min-width : 320px) {
+
+}
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+    .res-photo{
+        margin-left: auto;
+        margin-right: auto;
+        width: 500px;
+    }
+    p{
+        font-size: 12px;
+    }
+}
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    .res-photo{
+        text-align: left;   
+    }
+    p{
+        font-size: 14px;
+    }
+}
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    .res-photo{
+        width: 300px;
+        height: 200px;
+    }
+    p{
+        font-size: 15px;
+    }
+}
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+    .res-photo{
+        width: 300px;
+        height: 200px;
+    }
+    p{
+        font-size: 15px;
+    }
+}
+
+
+
+.left-menu{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.current-selected{
+    color: #c00;
+    text-decoration: none;
+}
+
+.box{
+    padding-top: 10px;
+    background-size: cover;
+    background-color: lavender;
+    height: 46px;
+    margin-left: 10px;
+}
+
+.result-num{
+    background-color: lightcyan;
+    margin-left: 10px;
+}
+
+.result{
+    width: 900px;
+}
+
+.list-item{
+    color: white;
+    display: inline;
+    list-style-type: armenian;
+    margin: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 35px;
+    text-align: center;
+}
+
+.section{
+    color: black;
+}
+
+.item-searched{
+    margin-left: 40px;
+    /* background-color: lightgrey; */
+}
+
+.point{
+    background-color: gray;
+    font-weight: 700;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    width: 32px;
+    line-height: 32px;
+    height: 32px;
+    border-radius: 32px;
+    margin-top: 15px;
+    margin-left: 17px;
+}
+
+.resname{
+    float: left;
+    width: 220px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    margin-top: 10px;
+    margin-left: 7px;
+}
+
+.name-item{
+    font-size: 15px;
+    line-height: 0px;
+    color: black;
+}
+
+.address{
+    color: darkkhaki;
+}
+
+.opentime-status {
+    color: green;
+    margin-left: 60px;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.cmt-icon{
+    width: 15px;
+    height: 15px;
+    background-color: inherit;
+}
+
+.cmt-num{
+    
+}
+
+.offline{
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    background-color: #959595;
+    margin-right: 4px;
+    position: relative;
+    border-radius: 50%;
+}
+
+.comment-block{
+    width: 700px;
+    height: 50px;
+}
+
+.avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+}
+
+.comment{
+    margin-top: 5px;
+    
+}

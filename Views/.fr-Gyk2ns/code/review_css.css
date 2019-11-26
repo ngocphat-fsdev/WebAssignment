@@ -1,0 +1,198 @@
+*{
+    box-sizing: border-box;
+}
+
+a, blockquote, body, button, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #eee;
+    font-family: arial;
+    position: relative;
+    font-size: 12px;
+    line-height: 1.4em;
+    margin: 0 auto;
+    max-width: 1110px;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    outline: 0;
+}
+
+.group-content{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #eee;
+}
+
+.group-content-header{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 2px 0px;
+    border-bottom: lightgreen solid;
+    width: fit-content;
+    padding: 0px 0px 5px 0px;
+}
+
+.group-content-header:hover{
+    border-bottom-color:  rgb(41, 196, 54);
+}
+
+.content-container {
+    width: auto;
+    margin-top: 15px;
+}
+
+.content-container .content-item {
+    width: 226px;
+    margin: 0 auto 15px auto;
+    float: left;
+    background: #fff;
+    border-radius: 2px;
+    min-height: 292px;
+    position: relative;
+}
+
+.content-container .content-item .desc {
+    font-size: 12px;
+    color: #888;
+}
+
+.content-item img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+.content-container .content-item .title a:hover {
+    text-decoration: underline;
+}
+
+.content-container .content-item .title, .home2-container .home2-panel-right .content-container .content-item .title2 {
+    display: block;
+    font-size: 14px;
+    padding: 0 0 3px;
+    font-weight: 700;
+}
+
+.avatar {
+    position: relative;
+}
+
+.content-container .content-item>.avatar img {
+    height: 141px;
+    width: 226px;
+}
+
+.items-content {
+    padding: 10px;
+    overflow: hidden;
+    height: 110px;
+    box-sizing: border-box;
+}
+
+.items-review {
+    clear: both;
+    line-height: 1.5em;
+    height: 3.8em;
+    border-top: #f6f6f6 1px solid;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.review-points{
+    background-color: lightgreen;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0px 0px 5px 0px;
+    width: 50px;
+    text-align: center;
+    font-size: 15;
+}
+
+.review-points:hover{
+    background-color: rgb(41, 196, 54);
+    font-weight: bold;
+}
+
+.items-review .avatar {
+    float: left;
+    width: 30px;
+    margin-right: 6px;
+}
+
+.content-container .content-item .items-count {
+    padding: 10px;
+    color: #888;
+    clear: both;
+    min-height: 37px;
+    border-top: #f8f8f8 1px solid;
+    overflow: hidden;
+    font-size: 12px;
+    float: right;
+}
+
+.items-count>a {
+    padding: 0 2px;
+}
+
+.content-container .items-review .avatar img {
+    border-radius: 30px!important;
+    height: 30px;
+}
+
+/*Responsive*/
+@media only screen and (min-width: 320px){
+    .content-container{
+        display: grid;
+        grid-template-columns: auto;
+    }
+    .w3-section{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 320px){
+    .content-container{
+        display: grid;
+        grid-template-columns: auto;
+    }
+    .w3-section{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 568px){
+    .content-container{
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+    .w3-section{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .content-container{
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+    .w3-section{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 990px){
+    .content-container{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+    }
+    .w3-section{
+        display: block;
+    }
+}
+
+
+

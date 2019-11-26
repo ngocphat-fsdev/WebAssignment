@@ -1,0 +1,109 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+@media only screen and (min-width : 320px) {
+    .res-description{
+        margin-top: 20px;
+    }
+    .res-photo{
+        width: 70%;
+    }
+}
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+    .res-description{
+        margin-top: 20px;
+    }
+    .res-photo{
+        width: 70%;
+    }
+}
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    .res-description{
+        margin-top: 0px;
+    }
+    .res-photo{
+        width: 100%;
+    }
+    .left-menu{
+        position: fixed;
+        top: 180px;
+    }
+}
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    
+}
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
+
+.result-num{
+    width: 100%;
+    border: 1px solid lightgray;
+    background-color:rgba(0,0,0,.03);
+}
+
+.opentime-status{
+    color: #959595;
+    font-size: 12px;
+}
+
+.offline{
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    background-color: #959595;
+    margin-top: 4px;
+    margin-right: 4px;
+    position: relative;
+    border-radius: 50%;
+}
+
+.cmt-icon{
+    width: 15px;
+    height: 15px;
+    background-color: inherit;
+}
+
+.point{
+    background-color: gray;
+    font-weight: 700;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 32px;
+}
+
+.name-item{
+    font-size: 15px;
+    color: black;
+}
+
+.address{
+    color: darkkhaki;
+}
+
+.avatar{
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;    
+}
+
+.comment{
+    display: inline;
+}
+
+.menu{
+    margin-top: 20px; 
+    visibility: visible;
+    font-size: 20px;
+    white-space: nowrap;
+}
