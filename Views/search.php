@@ -28,15 +28,15 @@
                 <div id="header-menu">
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist" style="height: 40px;">
-                            <a class="nav-item nav-link" id="nav-home-tab" href="homepage.html" role="tab" aria-controls="nav-home" aria-selected="false"
+                            <a class="nav-item nav-link" id="nav-home-tab" href="homepage.php" role="tab" aria-controls="nav-home" aria-selected="false"
                                 target="_self" style="border-top-left-radius: 0;border-top-right-radius: 0;">
                                 <p>Trang Chủ</p>
                             </a>
-                            <a class="nav-item nav-link" id="nav-profile-tab" href="hot.html" role="tab" aria-controls="nav-profile" aria-selected="true"
+                            <a class="nav-item nav-link" id="nav-profile-tab" href="hot.php" role="tab" aria-controls="nav-profile" aria-selected="true"
                                 target="_self" style="border-top-left-radius: 0;border-top-right-radius: 0;">
                                 <p>Hot</p>
                             </a>
-                            <a class="nav-item nav-link active" id="nav-contact-tab" href="review.html" role="tab" aria-controls="nav-contact" aria-selected="false"
+                            <a class="nav-item nav-link active" id="nav-contact-tab" href="review.php" role="tab" aria-controls="nav-contact" aria-selected="false"
                                 target="_self" style="border-top-left-radius: 0;border-top-right-radius: 0;">
                                 <p>Review</p>
                             </a>
@@ -52,7 +52,7 @@
                                 style="border-top-left-radius: 0;border-top-right-radius: 0;">
                                 <p>Giảm giá</p>
                             </a>
-                            <a class="nav-item nav-link" id="nav-contact-tab" href="contact.html" role="tab" aria-controls="nav-contact" aria-selected="false"
+                            <a class="nav-item nav-link" id="nav-contact-tab" href="contact.php" role="tab" aria-controls="nav-contact" aria-selected="false"
                                 target="_self" style="border-top-left-radius: 0;border-top-right-radius: 0;">
                                 <p>Liên hệ</p>
                             </a>

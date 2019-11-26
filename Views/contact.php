@@ -24,17 +24,17 @@
             <div id="header-menu">
                 <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist" style="height: 40px;">
-                        <a class="nav-item nav-link" id="nav-home-tab" href="homepage.html" role="tab"
+                        <a class="nav-item nav-link" id="nav-home-tab" href="homepage.php" role="tab"
                             aria-controls="nav-home" aria-selected="false" target="_self"
                             style="border-top-left-radius: 0;border-top-right-radius: 0;">
                             <p>Trang Chủ</p>
                         </a>
-                        <a class="nav-item nav-link" id="nav-profile-tab" href="hot.html" role="tab"
+                        <a class="nav-item nav-link" id="nav-profile-tab" href="hot.php" role="tab"
                             aria-controls="nav-profile" aria-selected="true" target="_self"
                             style="border-top-left-radius: 0;border-top-right-radius: 0;">
                             <p>Hot</p>
                         </a>
-                        <a class="nav-item nav-link" id="nav-contact-tab" href="review.html" role="tab"
+                        <a class="nav-item nav-link" id="nav-contact-tab" href="review.php" role="tab"
                             aria-controls="nav-contact" aria-selected="false" target="_self"
                             style="border-top-left-radius: 0;border-top-right-radius: 0;">
                             <p>Review</p>
@@ -54,7 +54,7 @@
                             style="border-top-left-radius: 0;border-top-right-radius: 0;">
                             <p>Giảm giá</p>
                         </a>
-                        <a class="nav-item nav-link active" id="nav-contact-tab" href="contact.html" role="tab"
+                        <a class="nav-item nav-link active" id="nav-contact-tab" href="contact.php" role="tab"
                             aria-controls="nav-contact" aria-selected="false" target="_self"
                             style="border-top-left-radius: 0;border-top-right-radius: 0;">
                             <p>Liên hệ</p>
@@ -66,17 +66,17 @@
             <div class="pos-f-t headmenu-sm">
                 <div class="collapse" id="navbarToggleExternalContent">
                     <div class="bg-light p-4">
-                        <a class="nav-item nav-link active" id="nav-home-tab" href="homepage.html" role="tab"
+                        <a class="nav-item nav-link active" id="nav-home-tab" href="homepage.php" role="tab"
                             aria-controls="nav-home" aria-selected="false"
                             style="border-top-left-radius: 0;border-top-right-radius: 0;">
                             <p>Trang Chủ</p>
                         </a>
-                        <a class="nav-item nav-link" id="nav-profile-tab" href="hot.html" role="tab"
+                        <a class="nav-item nav-link" id="nav-profile-tab" href="hot.php" role="tab"
                             aria-controls="nav-profile" aria-selected="true"
                             style="border-top-left-radius: 0;border-top-right-radius: 0;">
                             <p>Hot</p>
                         </a>
-                        <a class="nav-item nav-link" id="nav-contact-tab" href="review.html" role="tab"
+                        <a class="nav-item nav-link" id="nav-contact-tab" href="review.php" role="tab"
                             aria-controls="nav-contact" aria-selected="false"
                             style="border-top-left-radius: 0;border-top-right-radius: 0;">
                             <p>Review</p>
@@ -96,7 +96,7 @@
                             style="border-top-left-radius: 0;border-top-right-radius: 0;">
                             <p>Giảm Giá</p>
                         </a>
-                        <a class="nav-item nav-link" id="nav-contact-tab" href="contact.html" role="tab"
+                        <a class="nav-item nav-link" id="nav-contact-tab" href="contact.php" role="tab"
                             aria-controls="nav-contact" aria-selected="false"
                             style="border-top-left-radius: 0;border-top-right-radius: 0;">
                             <p>Liên Hệ</p>
@@ -221,7 +221,7 @@
         <!------------------------------------------------------------------>
         <nav class="nav justify-content-center login" style="background-color: #f8f9fa; position: relative;">
             <span style="width: 100px; height: 38px;margin-right: 10px;margin-top: 7px;margin-left: 10px;">
-                <a href="Login/Login.html">Đăng Nhập</a>
+                <a href="Login/Login.php">Đăng Nhập</a>
             </span>
             <div class="dropdown" style="margin-right: 10px; height: 40px;">
                 <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"

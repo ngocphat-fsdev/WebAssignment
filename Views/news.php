@@ -30,15 +30,15 @@
         <div id="header-menu">
           <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist" style="height: 40px;">
-              <a class="nav-item nav-link" id="nav-home-tab" href="homepage.html" role="tab" aria-controls="nav-home" aria-selected="false"
+              <a class="nav-item nav-link" id="nav-home-tab" href="homepage.php" role="tab" aria-controls="nav-home" aria-selected="false"
                 target="_self" style="border-top-left-radius: 0;border-top-right-radius: 0;">
                 <p class="header-text">Trang Chủ</p>
               </a>
-              <a class="nav-item nav-link" id="nav-profile-tab" href="hot.html" role="tab" aria-controls="nav-profile" aria-selected="true"
+              <a class="nav-item nav-link" id="nav-profile-tab" href="hot.php" role="tab" aria-controls="nav-profile" aria-selected="true"
                 target="_self" style="border-top-left-radius: 0;border-top-right-radius: 0;">
                 <p class="header-text">Hot</p>
               </a>
-              <a class="nav-item nav-link active" id="nav-contact-tab" href="review.html" role="tab" aria-controls="nav-contact" aria-selected="false"
+              <a class="nav-item nav-link active" id="nav-contact-tab" href="review.php" role="tab" aria-controls="nav-contact" aria-selected="false"
                 target="_self" style="border-top-left-radius: 0;border-top-right-radius: 0;">
                 <p class="header-text">Review</p>
               </a>
@@ -54,7 +54,7 @@
                 style="border-top-left-radius: 0;border-top-right-radius: 0;">
                 <p class="header-text">Giảm giá</p>
               </a>
-              <a class="nav-item nav-link" id="nav-contact-tab" href="contact.html" role="tab" aria-controls="nav-contact" aria-selected="false"
+              <a class="nav-item nav-link" id="nav-contact-tab" href="contact.php" role="tab" aria-controls="nav-contact" aria-selected="false"
                 target="_self" style="border-top-left-radius: 0;border-top-right-radius: 0;">
                 <p class="header-text">Liên hệ</p>
               </a>
@@ -129,7 +129,7 @@
                 </div>
                 <button type="navbar-btn" class="btn btn-outline-dark" style="height: 38px;margin-right: 10px;">App</button>
                 <span style="width: 310px; height: 38px;margin-right: 10px;margin-top: 7px;margin-left: 10px;">
-                  <a href="Login/Login.html" class="header-text">Đăng Nhập</a>
+                  <a href="Login/Login.php" class="header-text">Đăng Nhập</a>
                 </span>
                 <div class="dropdown" style="margin-right: 10px; height: 40px;">
                   <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-primary btn-circle">
