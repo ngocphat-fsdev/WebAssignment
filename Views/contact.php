@@ -263,101 +263,58 @@
             </div>
             <div class="info">
                 <h1>Liên hệ chúng tôi</h1>
-                <div class="info-group">
-                    <h3 style="color: rgba(255, 0, 0, 0.671);font-weight: bold;margin-bottom: 3px;">CaFo TP. HCM</h3>
-                    <p style="color: gray;font-weight: lighter;font-size: 14px;margin-bottom: inherit;">Lầu 8, Jabes
-                        Building, 244 Cống Quỳnh, Q.1, TP.HCM</p>
-                    <div>
-                        <p class="cont-info">Điện thoại: </p>
-                        <p class="add-info">1900 6510</p>
-                    </div>
-                    <div>
-                        <p class="cont-info">Email: </p>
-                        <p class="add-info">info@CaFo.vn</p>
-                    </div>
-                    <div>
-                        <p class="cont-info">Website: </p>
-                        <p class="add-info">www.CaFo.vn</p>
-                    </div>
-                    <div>
-                        <p class="cont-info">Giờ làm việc: </p>
-                        <p class="add-info">9:00 AM - 6:00 PM từ Thứ 2 - Thứ 6</p>
-                    </div>
-                </div>
-                <div class="info-group">
-                    <h3 style="color: rgba(255, 0, 0, 0.671);font-weight: bold;margin-bottom: 3px;">CaFo Đà Nẵng</h3>
-                    <p style="color: gray;font-weight: lighter;font-size: 14px;margin-bottom: inherit;">Tầng 9, Tòa nhà
-                        VietNam Post Đà Nẵng, 155 Nguyễn Văn Linh, P. Vĩnh Trung, Q. Thanh Khê, Đà Nẵng</p>
-                    <div>
-                        <p class="cont-info">Điện thoại: </p>
-                        <p class="add-info">1900 6510</p>
-                    </div>
-                    <div>
-                        <p class="cont-info">Email: </p>
-                        <p class="add-info">info@CaFo.vn</p>
-                    </div>
-                    <div>
-                        <p class="cont-info">Website: </p>
-                        <p class="add-info">www.CaFo.vn</p>
-                    </div>
-                    <div>
-                        <p class="cont-info">Giờ làm việc: </p>
-                        <p class="add-info">9:00 AM - 6:00 PM từ Thứ 2 - Thứ 6</p>
-                    </div>
-                </div>
-                <div class="info-group">
-                    <h3 style="color: rgba(255, 0, 0, 0.671);font-weight: bold;margin-bottom: 3px;">CaFo Huế</h3>
-                    <p style="color: gray;font-weight: lighter;font-size: 14px;margin-bottom: inherit;">Tầng 7, tòa nhà
-                        HCC, 28 Lý Thường Kiệt, TP. Huế</p>
-                    <div>
-                        <p class="cont-info">Điện thoại: </p>
-                        <p class="add-info">1900 6510</p>
-                    </div>
-                    <div>
-                        <p class="cont-info">Email: </p>
-                        <p class="add-info">info@CaFo.vn</p>
-                    </div>
-                    <div>
-                        <p class="cont-info">Website: </p>
-                        <p class="add-info">www.CaFo.vn</p>
-                    </div>
-                    <div>
-                        <p class="cont-info">Giờ làm việc: </p>
-                        <p class="add-info">9:00 AM - 6:00 PM từ Thứ 2 - Thứ 6</p>
-                    </div>
-                </div>
-                <div class="info-group">
-                    <h3 style="color: rgba(255, 0, 0, 0.671);font-weight: bold;margin-bottom: 3px;">CaFo Hải Phòng</h3>
-                    <p style="color: gray;font-weight: lighter;font-size: 14px;margin-bottom: inherit;">Tầng 6, 152
-                        Hoàng Văn Thụ, Hồng Bàng, Hải Phòng</p>
-                    <div>
-                        <p class="cont-info">Điện thoại: </p>
-                        <p class="add-info">1900 6510</p>
-                    </div>
-                    <div>
-                        <p class="cont-info">Email: </p>
-                        <p class="add-info">info@CaFo.vn</p>
-                    </div>
-                    <div>
-                        <p class="cont-info">Website: </p>
-                        <p class="add-info">www.CaFo.vn</p>
-                    </div>
-                    <div>
-                        <p class="cont-info">Giờ làm việc: </p>
-                        <p class="add-info">9:00 AM - 6:00 PM từ Thứ 2 - Thứ 6</p>
-                    </div>
-                </div>
-            </div>
-            <div id="tmp"></div>
-            <div class="info">
-                <div id="tmp2"></div>
-                <div class="info-group">
+                <!-- su dung object Models Agency (Location, Address, Phone, Email, Website, WorkTime) -->
+                <?php 
+                    include '../Models/Agency.php';
+                    $newAgency = new Agency(
+                        "CaFo TP. HCM",
+                        "Lầu 8, Jabes Building, 244 Cống Quỳnh, Q.1, TP.HCM",
+                        "1900 6510",
+                        "info@CaFo.vn",
+                        "www.CaFo.vn",
+                        "9:00 AM - 6:00 PM từ Thứ 2 - Thứ 6"
+                    );
+                    for ($item = 0; $item < 6; $item++){
+                ?>
                     <div class="info-group">
-                        <h3 style="color: rgba(255, 0, 0, 0.589);font-weight: bold;margin-bottom: 3px;">CaFo Hà Nội
+                        <h3 style="color: rgba(255, 0, 0, 0.671);font-weight: bold;margin-bottom: 3px;">
+                            <?php echo $newAgency->getLocation(); ?>
                         </h3>
-                        <p style="color: gray;font-weight: lighter;font-size: 14px;margin-bottom: inherit;">Tầng 3, Tòa
-                            nhà
-                            101 Láng Hạ, 101 Láng Hạ, Đống Đa, Hà Nội</p>
+                        <p style="color: gray;font-weight: lighter;font-size: 14px;margin-bottom: inherit;">
+                            <?php echo $newAgency->getAddress(); ?>
+                        </p>
+                        <div>
+                            <p class="cont-info">Điện thoại: </p>
+                            <p class="add-info">
+                                <?php echo $newAgency->getPhone(); ?>
+                            </p>
+                        </div>
+                        <div>
+                            <p class="cont-info">Email: </p>
+                            <p class="add-info">
+                                <?php echo $newAgency->getEmail(); ?>
+                            </p>
+                        </div>
+                        <div>
+                            <p class="cont-info">Website: </p>
+                            <p class="add-info">
+                                <?php echo $newAgency->getWebsite(); ?>
+                            </p>
+                        </div>
+                        <div>
+                            <p class="cont-info">Giờ làm việc: </p>
+                            <p class="add-info">
+                                <?php echo $newAgency->getWorkTime(); ?>
+                            </p>
+                        </div>
+                    </div>
+                <?php
+                    }
+                ?>
+                    <div class="info-group">
+                        <h3 style="color: rgba(255, 0, 0, 0.671);font-weight: bold;margin-bottom: 3px;">Phòng Quảng Cáo</h3>
+                        <p style="color: gray;font-weight: lighter;font-size: 14px;margin-bottom: inherit;">Tầng 6, 152
+                            Hoàng Văn Thụ, Hồng Bàng, Hải Phòng</p>
                         <div>
                             <p class="cont-info">Điện thoại: </p>
                             <p class="add-info">1900 6510</p>
@@ -366,51 +323,7 @@
                             <p class="cont-info">Email: </p>
                             <p class="add-info">info@CaFo.vn</p>
                         </div>
-                        <div>
-                            <p class="cont-info">Website: </p>
-                            <p class="add-info">www.CaFo.vn</p>
-                        </div>
-                        <div>
-                            <p class="cont-info">Giờ làm việc: </p>
-                            <p class="add-info">9:00 AM - 6:00 PM từ Thứ 2 - Thứ 6</p>
-                        </div>
                     </div>
-                    <div class="info-group">
-                        <h3 style="color: rgba(255, 0, 0, 0.671);font-weight: bold;margin-bottom: 3px;">CaFo Cần Thơ
-                        </h3>
-                        <p style="color: gray;font-weight: lighter;font-size: 14px;margin-bottom: inherit;">183 Võ Văn
-                            Kiệt,
-                            An Thới, Bình Thủy, Cần Thơ</p>
-                        <div>
-                            <p class="cont-info">Điện thoại: </p>
-                            <p class="add-info">1900 6510</p>
-                        </div>
-                        <div>
-                            <p class="cont-info">Email: </p>
-                            <p class="add-info">info@CaFo.vn</p>
-                        </div>
-                        <div>
-                            <p class="cont-info">Website: </p>
-                            <p class="add-info">www.CaFo.vn</p>
-                        </div>
-                        <div>
-                            <p class="cont-info">Giờ làm việc: </p>
-                            <p class="add-info">9:00 AM - 6:00 PM từ Thứ 2 - Thứ 6</p>
-                        </div>
-                    </div>
-                    <h3 style="color: rgba(255, 0, 0, 0.671);font-weight: bold;margin-bottom: 3px;">Phòng Quảng Cáo</h3>
-                    <p style="color: gray;font-weight: lighter;font-size: 14px;margin-bottom: inherit;">Tầng 6, 152
-                        Hoàng Văn Thụ, Hồng Bàng, Hải Phòng</p>
-                    <div>
-                        <p class="cont-info">Điện thoại: </p>
-                        <p class="add-info">1900 6510</p>
-                    </div>
-                    <div>
-                        <p class="cont-info">Email: </p>
-                        <p class="add-info">info@CaFo.vn</p>
-                    </div>
-                </div>
-
             </div>
         </div>
         <div class="complain" style="background: white; width: auto;">
