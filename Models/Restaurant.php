@@ -1,7 +1,7 @@
 <?php
 class Restaurant
 {
-    #object Models Restaurant (ResID, Address, Name, Rating, WorkTime, Dislike)
+    #object Models Restaurant (ResID, Address, Name, Rating, WorkTime)
     private $ResID;
     private $Address;
     private $Name;
