@@ -1,6 +1,7 @@
 <?php
     class Reviews
     {
+        private $ID;
         private $Title;
         private $ReviewPlaceName;
         private $AddressOfReviewPlace;
@@ -11,8 +12,9 @@
         private $ReviewPicture;
         private $ReviewComment;
 
-        public function __construct($Title, $ReviewPlaceName, $AddressOfReviewPlace, $ReviewerName, $ReviewContent,
+        public function __construct($ID, $Title, $ReviewPlaceName, $AddressOfReviewPlace, $ReviewerName, $ReviewContent,
                             $ReviewPoint, $ReviewerAvatar, $ReviewPicture, $ReviewComment){
+            $this->ID = $ID;
             $this->Title = $Title;
             $this->ReviewPlaceName = $ReviewPlaceName;
             $this->AddressOfReviewPlace = $AddressOfReviewPlace;
@@ -22,6 +24,10 @@
             $this->ReviewerAvatar = $ReviewerAvatar;
             $this->ReviewPicture = $ReviewPicture;
             $this->ReviewComment = $ReviewComment;
+        }
+
+        public function getID(){
+            return $this->ID;
         }
 
         public function getTitle(){
