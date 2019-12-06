@@ -7,14 +7,16 @@
         private $SeenCount;
         private $ShareCount;
         private $CommentCount;
+        private $LinkBlog;
         
-        public function __construct($Image, $Title, $Content, $SeenCount, $ShareCount, $CommentCount){
+        public function __construct($Image, $Title, $Content, $SeenCount, $ShareCount, $CommentCount, $LinkBlog){
             $this->Image = $Image;
             $this->Title = $Title;
             $this->Content = $Content;
             $this->SeenCount = $SeenCount;
             $this->ShareCount = $ShareCount;
             $this->CommentCount = $CommentCount;
+            $this->LinkBlog = $LinkBlog;
         }
 
         public function getImage(){
@@ -39,6 +41,10 @@
 
         public function getCommentCount(){
             return $this->CommentCount;
+        }
+
+        public function getLinkBlog(){
+            return $this->LinkBlog;
         }
     }
 ?>
