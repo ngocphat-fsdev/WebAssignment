@@ -74,8 +74,10 @@ CREATE TABLE Reviews (
 );
 
 CREATE TABLE Orders (
-    UserID      INT UNSIGNED REFERENCES User(UserID),
-    ResID       INT UNSIGNED REFERENCES Restaurant(ResID),
-    PRIMARY KEY (UserID, ResID)
+    UserID      INT UNSIGNED,
+    ResID       INT UNSIGNED,
+    PRIMARY KEY (UserID, ResID),
+    FOREIGN KEY (UserID) REFERENCES User(UserID),
+    FOREIGN KEY (ResID)  REFERENCES Restaurant(ResID)
 );
 
