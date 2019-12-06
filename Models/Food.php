@@ -1,27 +1,23 @@
 <?php
 class Food
 {
-    #object Models Food (BlogID, PicLink, Content, Comment, Like, Dislike)
-    private $BlogID;
+    #object Models Food (ID, PicLink, Name, Price, Like, Dislike)
+    private $ID;
     private $PicLink;
-    private $Content;
-    private $Comment;
-    private $LikeCount;
-    private $DislikeCount;
+    private $Name;
+    private $Price;
 
-    public function __construct($BlogID, $PicLink, $Content, $Comment, $LikeCount, $DislikeCount)
+    public function __construct($ID, $PicLink, $Name, $Price)
     {
-        $this->BlogID = $BlogID;
+        $this->ID = $ID;
         $this->PicLink = $PicLink;
-        $this->Content = $Content;
-        $this->Comment = $Comment;
-        $this->Like = $LikeCount;
-        $this->Dislike = $DislikeCount;
+        $this->Name = $Name;
+        $this->Price = $Price;
     }
 
-    public function getBlogID()
+    public function getID()
     {
-        return $this->BlogID;
+        return $this->ID;
     }
 
     public function getPicLink()
@@ -29,23 +25,13 @@ class Food
         return $this->PicLink;
     }
 
-    public function getContent()
+    public function getName()
     {
-        return $this->Content;
+        return $this->Name;
     }
 
-    public function getComment()
+    public function getPrice()
     {
-        return $this->Comment;
-    }
-
-    public function getLikeCount()
-    {
-        return $this->LikeCount;
-    }
-
-    public function getDislikeCount()
-    {
-        return $this->DislikeCount;
+        return $this->Price;
     }
 }
