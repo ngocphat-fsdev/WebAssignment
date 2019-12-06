@@ -14,7 +14,7 @@ class User
         $this->Name = $Name;
         $this->Sex = $Sex;
         $this->AccountName = $AccountName;
-        $this->Like = $Password;
+        $this->Password = $Password;
     }
 
     public function getID()
