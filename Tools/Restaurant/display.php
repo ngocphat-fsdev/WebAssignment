@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
     echo "<th colspan=\"2\"><button id=\"add\">Add</button></th></tr>";
     echo "</table>";
 } else {
-    echo "<table id=\"user_data\"><tr><th>ID</th><th>Name</th><th>PicLink</th></th><th>Price</th><th>ResID</th><th></th><th></th></tr>";
+    echo "<table id=\"user_data\"><tr><th>ID</th><th>Name</th><th>Addr</th><th>Rating</th><th>Work</th><th></th><th></th></tr>";
     echo "<tr><td contenteditable id=\"data1\"></td>";
     echo "<td contenteditable id=\"data2\"></td>";
     echo "<td contenteditable id=\"data3\"></td>";
