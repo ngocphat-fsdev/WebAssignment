@@ -5,6 +5,10 @@ if (!$conn) {
 }
 $id = $_GET["id"];
 if (isset($id)) {
-    $sql = "DELETE FROM food WHERE ID=$id";
+    $sql = "DELETE FROM Food WHERE ID=$id";
     $conn->query($sql);
+    file_put_contents('food.sql', "DELETE FROM Food WHERE ID = ".$id.";\n", FILE_APPEND);
+    // $file = fopen('food.sql', 'w+');
+    // fwrite($file, "DELETE FROM Food WHERE ID = " . $id);
+    // fclose($file);
 }

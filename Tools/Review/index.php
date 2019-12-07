@@ -29,20 +29,18 @@
         $(document).on("click", "#add", function() {
             var addid = $("#data1").text();
             var addname = $("#data2").text();
-            var addaddr = $("#data3").text();
-            var addrating = $("#data4").text();
-            var addwork = $("#data5").text();
-            var addpic = $("#data6").text();
+            var addpic = $("#data3").text();
+            var addprice = $("#data4").text();
+            var addres = $("#data5").text();
             $.ajax({
                 type: "GET",
                 url: "./insert.php",
                 data: {
                     id: addid,
                     name: addname,
-                    addr: addaddr,
-                    rating: addrating,
-                    work: addwork,
-                    pic: addpic
+                    pic: addpic,
+                    price: addprice,
+                    res: addres
                 },
                 success: function(data) {
                     //alert("Data was succesfully added");
@@ -56,10 +54,9 @@
             var tr = "#tr" + id;
             var cid = $(tr + " .id-data").text();
             var cname = $(tr + " .name-data").text();
-            var caddr = $(tr + " .addr-data").text();
-            var crating = $(tr + " .rating-data").text();
-            var cwork = $(tr + " .work-data").text();
             var cpic = $(tr + " .pic-data").text();
+            var cprice = $(tr + " .price-data").text();
+            var cres = $(tr + " .resid-data").text();
             $.ajax({
                 type: "GET",
                 url: "./edit.php",
@@ -67,10 +64,9 @@
                     id: id,
                     cid: cid,
                     cname: cname,
-                    caddr: caddr,
-                    crating: crating,
-                    cwork: cwork,
-                    cpic: cpic
+                    cpic: cpic,
+                    cprice: cprice,
+                    cres: cres
                 },
                 success: function(data) {
                     //alert("Data was succesfully edited");
@@ -89,7 +85,7 @@
                 },
                 success: function(data) {
                     fetch_table();
-                    //alert("Data was succesfully deleted");
+                    alert("Data was succesfully deleted");
                 }
             })
         })
