@@ -24,7 +24,8 @@ CREATE TABLE Restaurant (
     Address     VARCHAR(255),
     Name        VARCHAR(255),
     Rating      FLOAT,
-    WorkTime    VARCHAR(255)
+    WorkTime    VARCHAR(255),
+    PictureRes  VARCHAR(255)
 );
 
 CREATE TABLE Agency (
