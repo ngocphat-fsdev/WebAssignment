@@ -6,7 +6,8 @@ CREATE TABLE User (
     UserName        VARCHAR(255) NOT NULL,
     Sex         BOOLEAN,
     AccountName VARCHAR(255) NOT NULL,
-    Password    VARCHAR(255) NOT NULL    
+    Password    VARCHAR(255) NOT NULL,
+    UserLevel       INT NOT NULL   
 );
 
 CREATE TABLE HotNews (
