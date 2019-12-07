@@ -10,6 +10,11 @@ if (isset($id)) {
     $caddr = $_GET['caddr'];
     $crating = $_GET['crating'];
     $cwork = $_GET['cwork'];
-    $sql = "UPDATE restaurant SET Name = '$cname', Address = '$caddr', ResID = '$cid', Rating = '$crating', WorkTime = '$cwork' WHERE ResID=$id";
+    $cpic = $_GET['cpic'];
+    $sql = "UPDATE restaurant SET Name = '$cname', Address = '$caddr', ResID = '$cid', Rating = '$crating', WorkTime = '$cwork', PictureRes = '$cpic' WHERE ResID=$id";
     $conn->query($sql);
 }
+file_put_contents('restaurant.sql', "UPDATE restaurant SET Name = '".$cname."', Address = '".$caddr."', ResID = '".$cid."', Rating = '".$crating."', WorkTime = '".$cwork."', PictureRes = '".$cpic."' WHERE ResID=".$id.";\n", FILE_APPEND);
+// $file = fopen('restaurant.sql', 'w+');
+// fwrite($file, "UPDATE restaurant SET Name = ".$cname.", Address = ".$caddr.", ResID = ".$cid.", Rating = ".$crating.", WorkTime = ".$cwork.", PictureRes = ".$cpic." WHERE ResID=".$id);
+// fclose($file);
