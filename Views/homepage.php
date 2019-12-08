@@ -10,9 +10,16 @@
     <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="./w3.css">
     <link href="./style.css" type="text/css" rel="stylesheet">
+    <script language="javascript" type="text/javascript" src="script/jquery-1.9.1.min.js"></script>
 </head>
 
 <body>
+    <?php 
+    $user_name = "";
+    session_start(); ?>
+    <?php include ("../Controllers/handleHomePage.php");
+    if (isset($_POST) && sizeof($_POST)>0) header('Location: Login/logout.php');
+    ?>
     <div id="home-page">
         <div id="intro-head">
             <!-------------------------------------------------------------->
@@ -181,9 +188,18 @@
                         </div>
                         <button type="navbar-btn" class="btn btn-outline-dark"
                             style="height: 38px;margin-right: 10px;">App</button>
-                        <span style="width: 310px; height: 38px;margin-right: 10px;margin-top: 7px;margin-left: 10px;">
-                            <a href="#">Đăng Nhập</a>
+                        
+                        <span style="width: 310px; height: 38px;margin-right: 10px;margin-top: 7px;margin-left: 10px;" >
+                            <a href="Login/Login.php" id="btn_login">Đăng Nhập</a>
+
+                            <form action="homepage.php" method="post" id="form_logout">
+                                <input type="text" value="<?php echo $user_name?>" name="username" hidden>
+                                <a href="" id="username"><?php echo $user_name?></a>
+			                </form>
                         </span>
+                        <button type="submit" id="btn_logout" form="form_logout" value="Log out" class="btn btn-danger" style="height:35px; margin-right:10px;" > <i class="fa fa-sign-out"></i> </button>
+                        <?php include ("../Controllers/handleHomePage.php");?>
+
                         <div class="dropdown" style="margin-right: 10px; height: 40px;">
                             <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false" class="btn btn-primary btn-circle">
@@ -358,7 +374,7 @@
             </div>
         </nav>
         <!------------------------------------------------------------------>
-        <nav class="nav justify-content-center login" style="background-color: #f8f9fa;">
+        <!-- <nav class="nav justify-content-center login" style="background-color: #f8f9fa;">
             <span style="width: 100px; height: 38px;margin-right: 10px;margin-top: 7px;margin-left: 10px;">
                 <a href="Login/Login.php">Đăng Nhập</a>
             </span>
@@ -388,7 +404,7 @@
                 style="height: 37px;">
                 <img src="./img/vn.png" style="width: 25px;vertical-align: 0;">
             </button>
-        </nav>
+        </nav> -->
         <!------------------------------------------------------------------>
         <div id="intro-banner">
             <div class="bd-example">
