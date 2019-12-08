@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Login CaFo</title>
+        <title>Đăng nhập CaFo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
         <!-- Use boostrap 3.4.0 -->
@@ -20,8 +20,8 @@
                    
         <div class="row">
             <div class="col-md-offset-4 col-md-4 form">
-                <div> <h3 class="title"> Đăng nhập FDID </h3> </div>
-                <form>
+                <div> <h3 class="title"> Đăng nhập Cafo </h3> </div>
+                <form action="Login.php" method="post">
                     <div class="form-group">
                         <a class="btn btn-lg btn-success btn-block" style="overflow: hidden;background-color:#4066b0;margin-bottom: 10px;"> ĐĂNG NHẬP BẰNG FACEBOOK
                         </a>
@@ -38,7 +38,7 @@
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-user"></span>
                         </span>
-                            <input type="email" name="email" class="form-control" required="" placeholder="Email">
+                            <input type="email" name="account" class="form-control" required="" placeholder="Email">
                         
                     </div>
                     <div class="form-space input-group">
@@ -56,8 +56,15 @@
                     <div style="clear:both;float:left;width:100%;margin-top:15px;">
                         <input type="submit" value="Đăng nhập" id="bt_submit" class="btn btn-lg btn-success btn-block" style="background-color:#0495ba;font-size: 14px;border-color:#0495ba">
                     </div>
+                    <?php
+                    include ("../../Controllers/handleLogin.php");
+                    ?>
+                    <br>
+                    <div class="text-danger error-warning">
+                        <?php echo $logInFailed; ?>
+                    </div>
                     <div class="p">
-                        <p> Bạn đã có tài khoản tại Cafo.vn?<a href="" class="link"> Đăng ký </a> </p>
+                        <p> Bạn đã có tài khoản tại Cafo.vn?<a href="register.php" class="link"> Đăng ký </a> </p>
                     </div>
                 </form>
             </div>
