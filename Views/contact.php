@@ -2,7 +2,7 @@
 <html lang="vi">
 
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type"; content="text/html"; charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Tổng Hợp Địa Điểm Ăn Uống Tại TPHCM</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -266,15 +266,11 @@
                 <!-- su dung object Models Agency (Location, Address, Phone, Email, Website, WorkTime) -->
                 <?php 
                     include '../Models/Agency.php';
-                    $newAgency = new Agency(
-                        "CaFo TP. HCM",
-                        "Lầu 8, Jabes Building, 244 Cống Quỳnh, Q.1, TP.HCM",
-                        "1900 6510",
-                        "info@CaFo.vn",
-                        "www.CaFo.vn",
-                        "9:00 AM - 6:00 PM từ Thứ 2 - Thứ 6"
-                    );
-                    for ($item = 0; $item < 6; $item++){
+                    include '../Controllers/connectDB.php';
+                    $sql = "SELECT * FROM Agency";
+                    $result = mysqli_query($conn, $sql);
+                    while($row = mysqli_fetch_assoc($result)){
+                        $newAgency = new Agency($row);
                 ?>
                     <div class="info-group">
                         <h3 style="color: rgba(255, 0, 0, 0.671);font-weight: bold;margin-bottom: 3px;">
@@ -310,6 +306,7 @@
                     </div>
                 <?php
                     }
+                    include '../Controllers/disconnectDB.php';
                 ?>
                     <div class="info-group">
                         <h3 style="color: rgba(255, 0, 0, 0.671);font-weight: bold;margin-bottom: 3px;">Phòng Quảng Cáo</h3>

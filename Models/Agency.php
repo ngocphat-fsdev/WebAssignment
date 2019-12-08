@@ -9,13 +9,13 @@
         private $Website;
         private $WorkTime;
 
-        public function __construct($Location, $Address, $Phone, $Email, $Website, $WorkTime){
-            $this->Location = $Location;
-            $this->Address = $Address;
-            $this->Phone = $Phone;
-            $this->Email = $Email;
-            $this->Website = $Website;
-            $this->WorkTime = $WorkTime;
+        public function __construct($row){
+            $this->Location = $row['Location'];
+            $this->Address = $row['Address'];
+            $this->Phone = $row['Phone'];
+            $this->Email = $row['Email'];
+            $this->Website = $row['Website'];
+            $this->WorkTime = $row['WorkTime'];
         }
 
         public function getLocation()
