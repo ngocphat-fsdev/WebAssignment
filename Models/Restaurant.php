@@ -7,14 +7,16 @@ class Restaurant
     private $Name;
     private $Rating;
     private $WorkTime;
+    private $Picture;
 
-    public function __construct($ResID, $Address, $Name, $Rating, $WorkTime)
+    public function __construct($ResID, $Address, $Name, $Rating, $WorkTime, $Picture)
     {
         $this->ResID = $ResID;
         $this->Address = $Address;
         $this->Name = $Name;
         $this->Rating = $Rating;
         $this->WorkTime = $WorkTime;
+        $this->Picture = $Picture;
     }
 
     public function getResID()
@@ -40,5 +42,9 @@ class Restaurant
     public function getWorkTime()
     {
         return $this->WorkTime;
+    }
+
+    public function getPicture(){
+        return $this->Picture;
     }
 }

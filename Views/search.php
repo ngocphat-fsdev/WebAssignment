@@ -12,9 +12,33 @@
     <link rel="stylesheet" href="./w3.css">
     <link href="./style.css" type="text/css" rel="stylesheet">
     <link href="css/search-style.css" rel="stylesheet">
+
+    <script>
+        function loadXMLDoc() {
+            var xmlhttp;
+            if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
+            else {// code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            return xmlhttp;
+        }
+        function showData(key) {
+            var xmlhttp = loadXMLDoc();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4)
+                    if (xmlhttp.status == 200) {
+                        document.getElementById("search-result").innerHTML = xmlhttp.responseText;                        
+                    }
+                    else alert("Status is " + xmlhttp.status);
+            }            
+            var para = "?key=" + key;
+            xmlhttp.open("GET", "../Controllers/handleSearch.php" + para, true);
+            xmlhttp.send();
+        }        
+    </script>
 </head>
 
-<body>
+<body onload='showData("f")'>
     <div class="container mt-50">
         <div class="row">
             <!--Header-->
@@ -212,265 +236,8 @@
                         <button type="button" class="btn btn-success btn-xs mt-3 mr-3">Coffee đá</button>
                         <button type="button" class="btn btn-success btn-xs mt-3 mr-3">Coffee rum</button>
                     </div>
-
-                    <div class="mt-3">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                                <div class="left-info">
-                                    <div class="item-searched">
-                                        <div class="row">
-                                            <img src="images/coffee-house.jpg" alt="" class="img-fluid rounded res-photo">
-                                        </div>
-                                        <div class="opentime-status mt-1">
-                                            <div class="row">
-                                                <span class="offline"></span>
-                                                Chưa mở cửa
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                                        <a href="#">
-                                                            <img src="images/comment-icon.png" alt="" class="cmt-icon">
-                                                            <span>559</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                                        <a href="#">
-                                                            <img src="images/photo-icon.jpg" alt="" class="cmt-icon">
-                                                            <span>443</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                                        <a href="#">
-                                                            <img src="images/save-icon.jpg" alt="" class="cmt-icon">
-                                                            <span>101</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                                <div class="res-description ml-3">
-                                    <div class="row">
-                                        <div class="point">8.4</div>
-                                        <div class="resname ml-2">
-                                            <a href="#" class="name-item"><b>The Coffee House</b></a>
-                                            <div class="address">
-                                                <p><b>30 Huỳnh Tịnh Của, Quận 3, TP. HCM</b></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr class="my-0" style="border: 0.7px solid green">
-                                <div class="res-cmt my-1">
-                                    <div class="comment-block">
-                                        <div class="row">
-                                            <div class="media ml-3">
-                                                <img class="d-flex mr-3 rounded-circle avatar" src="images/dog-avatar.jpg" alt="">
-                                                <div class="media-body ml-3">
-                                                    <div class="row">
-                                                        <a href="#" class="name-reviewer">Minh Phạm &nbsp;</a>
-                                                        <p>Tch ở đây rộng rãi. Nhân viên nhiệt tình. Nước ổn, thích ngồi
-                                                            ở đây làm
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="media ml-3">
-                                                <img class="d-flex mr-3 rounded-circle avatar" src="images/cat-avatar.jpg" alt="">
-                                                <div class="media-body ml-3">
-                                                    <div class="row">
-                                                        <a href="#" class="name-reviewer">Vinh Lê &nbsp;</a>
-                                                        <p>The Coffee House thì quá quen thuộc với hầu hết mọi người rồi
-                                                            nhưng TCH đang có chương trình khuyến mãi đặc biệt</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-3">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                                <div class="left-info">
-                                    <div class="item-searched">
-                                        <div class="row">
-                                            <img src="images/highland-fruit.jpg" alt="" class="img-fluid rounded res-photo">
-                                        </div>
-                                        <div class="opentime-status mt-1">
-                                            <div class="row">
-                                                <span class="offline"></span>
-                                                Chưa mở cửa
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                                        <a href="#">
-                                                            <img src="images/comment-icon.png" alt="" class="cmt-icon">
-                                                            <span>559</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                                        <a href="#">
-                                                            <img src="images/photo-icon.jpg" alt="" class="cmt-icon">
-                                                            <span>443</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                                        <a href="#">
-                                                            <img src="images/save-icon.jpg" alt="" class="cmt-icon">
-                                                            <span>101</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                                <div class="res-description ml-3">
-                                    <div class="row">
-                                        <div class="point">8.4</div>
-                                        <div class="resname ml-2">
-                                            <a href="#" class="name-item"><b>Highland Fruits</b></a>
-                                            <div class="address">
-                                                <p><b>29/24 Nguyễn Gia Trí (Đường D2), P. 25, Quận Bình Thạnh, TP.HCM
-                                                    </b></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr class="my-0" style="border: 0.7px solid green">
-                                <div class="res-cmt my-1">
-                                    <div class="comment-block">
-                                        <div class="row">
-                                            <div class="media ml-3">
-                                                <img class="d-flex mr-3 rounded-circle avatar" src="images/3-avatar.jpg" alt="">
-                                                <div class="media-body ml-3">
-                                                    <div class="row">
-                                                        <a href="#" class="name-reviewer">Edra Mode &nbsp;</a>
-                                                        <p>Mình có dịp ghé qua quán do người bạn giới thiệu, mình là tín
-                                                            đồ của sầu riêng, và thế là như vớ được vàng :)))
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="media ml-3">
-                                                <img class="d-flex mr-3 rounded-circle avatar" src="images/4-avatar.jpg" alt="">
-                                                <div class="media-body ml-3">
-                                                    <div class="row">
-                                                        <a href="#" class="name-reviewer">Kiều Kiều &nbsp;</a>
-                                                        <p>Mình hay uống nước ép vì nguyên chất và không hề có đường, quán
-                                                            có món sinh tố Bơ sầu riêng thì siêu ngon</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-3">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                                <div class="left-info">
-                                    <div class="item-searched">
-                                        <div class="row">
-                                            <img src="images/BOONG-coffee.jpg" alt="" class="img-fluid rounded res-photo">
-                                        </div>
-                                        <div class="opentime-status mt-1">
-                                            <div class="row">
-                                                <span class="offline"></span>
-                                                Chưa mở cửa
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                                        <a href="#">
-                                                            <img src="images/comment-icon.png" alt="" class="cmt-icon">
-                                                            <span>559</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                                        <a href="#">
-                                                            <img src="images/photo-icon.jpg" alt="" class="cmt-icon">
-                                                            <span>443</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                                        <a href="#">
-                                                            <img src="images/save-icon.jpg" alt="" class="cmt-icon">
-                                                            <span>101</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                                <div class="res-description ml-3">
-                                    <div class="row">
-                                        <div class="point">8.4</div>
-                                        <div class="resname ml-2">
-                                            <a href="#" class="name-item"><b>BOONG coffee</b></a>
-                                            <div class="address">
-                                                <p><b>525/33Bis Tô Hiến Thành, P. 14, Quận 10, TP.HCM</b></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr class="my-0" style="border: 0.7px solid green">
-                                <div class="res-cmt my-1">
-                                    <div class="comment-block">
-                                        <div class="row">
-                                            <div class="media ml-3">
-                                                <img class="d-flex mr-3 rounded-circle avatar" src="images/5-avatar.jpg" alt="">
-                                                <div class="media-body ml-3">
-                                                    <div class="row">
-                                                        <a href="#" class="name-reviewer">Phat Cat &nbsp;</a>
-                                                        <p>Mình thích và ấn tượng ở Boong là có sân vườn rất rộng , có cả
-                                                            khu vui chơi cho trẻ em vào cuối tuần , ngồi cà phê thư giãn
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="media ml-3">
-                                                <img class="d-flex mr-3 rounded-circle avatar" src="images/6-avatar.jpg" alt="">
-                                                <div class="media-body ml-3">
-                                                    <div class="row">
-                                                        <a href="#" class="name-reviewer">Uyên Phạm &nbsp;</a>
-                                                        <p>Quán có không gian đẹp, nhiều góc sống ảo. Tối lên đèn vẫn lung
-                                                            linh như thường nhé. Menu thì đa dạng phong phú.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div id="search-result">                    
+                    </div>            
                     <button type="button" class="btn btn-primary btn-block">Hiển thị thêm kết quả</button>
                 </div>
             </div>

@@ -54,7 +54,7 @@
             return $this->ReviewPoint;
         }
 
-        public function getReviewAvatar(){
+        public function getReviewerAvatar(){
             return $this->ReviewerAvatar;
         }
 
