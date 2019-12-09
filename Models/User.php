@@ -1,20 +1,22 @@
 <?php
 class User
 {
-    #object Models User (ID, Name, Sex, AccountName, Password)
+    #object Models User (ID, Name, Sex, AccountName, Password, UserLevel)
     private $ID;
     private $Name;
     private $Sex;
     private $AccountName;
     private $Password;
+    private $UserLevel;
 
-    public function __construct($ID, $Name, $Sex, $AccountName, $Password)
+    public function __construct($ID, $Name, $Sex, $AccountName, $Password, $UserLevel)
     {
         $this->ID = $ID;
         $this->Name = $Name;
         $this->Sex = $Sex;
         $this->AccountName = $AccountName;
         $this->Password = $Password;
+        $this->UserLevel = $UserLevel;
     }
 
     public function getID()
@@ -41,4 +43,10 @@ class User
     {
         return $this->Password;
     }
+
+    public function getUserLevel()
+    {
+        return $this->UserLevel;
+    }
+
 }
