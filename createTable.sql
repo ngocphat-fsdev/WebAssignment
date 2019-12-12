@@ -10,26 +10,6 @@ CREATE TABLE User (
     UserLevel       INT NOT NULL   
 );
 
-CREATE TABLE CartFood (
-    ID          INT UNSIGNED PRIMARY KEY,
-    NameFood    VARCHAR(255) NOT NULL,
-    LinkImage   VARCHAR(255),
-    Price       VARCHAR(255),
-    Amount      INT UNSIGNED,
-    TotalPrice  VARCHAR(255),
-    Status      VARCHAR(255) 
-);
-
-CREATE TABLE HotNews (
-    PictureLink VARCHAR(255) NOT NULL,
-    Title       VARCHAR(255) NOT NULL,
-    Content     VARCHAR(255) NOT NULL,
-    SeenCount   INT,
-    ShareCount  INT,
-    Comment     VARCHAR(255) NOT NULL,
-    LinkBLog    VARCHAR(255) NOT NULL PRIMARY KEY
-);
-
 CREATE TABLE Restaurant (
     ResID       INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     Address     VARCHAR(255),
@@ -59,15 +39,24 @@ CREATE TABLE Food (
 
 CREATE TABLE Blog (
     BlogID      INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    PictureLink VARCHAR(255) NOT NULL,
-    Content     VARCHAR(1000) NOT NULL,
-    Comment     VARCHAR(255),
-    LikeCount           INT,
-    DislikeCount        INT,
-    LinkBlog    VARCHAR(255) NOT NULL,
-    FOREIGN KEY (LinkBlog) REFERENCES HotNews(LinkBLog),
+    Title       VARCHAR(255) NOT NULL,
+    Content     VARCHAR(20000) NOT NULL,
+    Time        VARCHAR(255) NOT NULL,
+    LikeCount   INT NOT NULL,
+    Rating      INT UNSIGNED NOT NULL,
     UserID      INT UNSIGNED,
     FOREIGN KEY (UserID) REFERENCES User(UserID)     
+);
+
+CREATE TABLE BlogComment(
+    CommentID       INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    BlogID          INT UNSIGNED NOT NULL,
+    FOREIGN KEY (BlogID) REFERENCES Blog(BlogID)
+    UserID          INT UNSIGNED NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES User(UserID)
+    Content         VARCHAR(255) NOT NULL,
+    Time            VARCHAR(255) NOT NULL,
+    LikeCount       INT UNSIGNED
 );
 
 CREATE TABLE Reviews (
@@ -91,5 +80,15 @@ CREATE TABLE Orders (
     PRIMARY KEY (UserID, ResID),
     FOREIGN KEY (UserID) REFERENCES User(UserID),
     FOREIGN KEY (ResID)  REFERENCES Restaurant(ResID)
+);
+
+CREATE TABLE CartFood (
+    ID          INT UNSIGNED PRIMARY KEY,
+    NameFood    VARCHAR(255) NOT NULL,
+    LinkImage   VARCHAR(255),
+    Price       VARCHAR(255),
+    Amount      INT UNSIGNED,
+    TotalPrice  VARCHAR(255),
+    Status      VARCHAR(255) 
 );
 

@@ -147,7 +147,7 @@
     <div class="list-content">
         <ul class="list-news-item">
             <li>
-                <a href="news.php">
+                <a href="news-content.php">
                     <div class="img-container">
                         <img data-parent="$(this).parent()" data-rescale-on-resize="false" data-align="center"
                             src="images/photo-post-1.jpg" data-is-lazyload="false" data-is-fail="false"
