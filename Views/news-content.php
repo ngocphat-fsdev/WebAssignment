@@ -15,7 +15,16 @@
     <link href="css/blog-style.css" rel="stylesheet">
 
     <script>
-    function loadXMLDoc() {
+    function gup(name, url) {
+        if (!url) url = location.href;
+        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+        var regexS = "[\\?&]" + name + "=([^&#]*)";
+        var regex = new RegExp(regexS);
+        var results = regex.exec(url);
+        return results == null ? null : results[1];
+    }
+
+    function loadXMLDoc() {        
         var xmlhttp;
         if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
         else { // code for IE6, IE5
@@ -24,7 +33,8 @@
         return xmlhttp;
     }
 
-    function showContent(ID) {
+    function showContent() {
+        var ID = gup('BlogID', location.url);
         var xmlhttp = loadXMLDoc();
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4)
@@ -38,7 +48,8 @@
         xmlhttp.send();
     }
 
-    function showComments(ID) {
+    function showComments() {
+        var ID = gup('BlogID', location.url);
         var xmlhttp = loadXMLDoc();
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4)
@@ -50,6 +61,31 @@
         var para = "?BlogID=" + ID;
         xmlhttp.open("GET", "../Controllers/handleNewsComments.php" + para, true);
         xmlhttp.send();
+    }
+
+    function cmt() {        
+        var ID = gup('BlogID', location.url);
+        var content = document.getElementById("comment-content").value;
+        if (content.trim() != "") {
+            var xmlhttp = loadXMLDoc();
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4){
+                    if (xmlhttp.status == 200) {
+                        if (xmlhttp.responseText == "true"){
+                            showComments();
+                            document.getElementById("comment-content").value = "";
+                        }
+                        else{
+                            alert("Chưa đăng nhập");
+                        }
+                    }
+                    else alert("Status is " + xmlhttp.status);
+                }                
+            }
+            var para = "?BlogID=" + ID + "&content=" + content;
+            xmlhttp.open("GET", "../Controllers/handlePostComments.php" + para, true);
+            xmlhttp.send();
+        }
     }
     </script>
 </head>
@@ -240,9 +276,10 @@
                     <div class="card-body">
                         <form>
                             <div class="form-group">
-                                <textarea class="form-control" rows="5"></textarea>
+                                <textarea class="form-control" rows="5" id="comment-content">
+                                </textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="button" onclick="cmt()" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -258,7 +295,6 @@
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
-
                 <div class="mt-9">
                     <img class="img-fluid rounded mt-9 advertise-photo-header" src="images/advertisement.jpg" alt="">
                     <div class="card">
@@ -449,9 +485,10 @@
     </script>
 
     <script>
-    showContent(2);
-    showComments(2);
+    showContent();
+    showComments();
     </script>
+    ?>
 </body>
 
 </html>
