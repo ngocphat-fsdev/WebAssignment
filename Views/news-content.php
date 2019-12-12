@@ -24,17 +24,31 @@
         return xmlhttp;
     }
 
-    function showData(ID) {
+    function showContent(ID) {
         var xmlhttp = loadXMLDoc();
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4)
                 if (xmlhttp.status == 200) {
-                    document.getElementById("blog-content").innerHTML = xmlhttp.responseText;                    
+                    document.getElementById("blog-content").innerHTML = xmlhttp.responseText;
                 }
             else alert("Status is " + xmlhttp.status);
         }
         var para = "?BlogID=" + ID;
         xmlhttp.open("GET", "../Controllers/handleNewsContent.php" + para, true);
+        xmlhttp.send();
+    }
+
+    function showComments(ID) {
+        var xmlhttp = loadXMLDoc();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4)
+                if (xmlhttp.status == 200) {
+                    document.getElementById("blog-comment").innerHTML = xmlhttp.responseText;
+                }
+            else alert("Status is " + xmlhttp.status);
+        }
+        var para = "?BlogID=" + ID;
+        xmlhttp.open("GET", "../Controllers/handleNewsComments.php" + para, true);
         xmlhttp.send();
     }
     </script>
@@ -237,44 +251,8 @@
                 <a href="#" style="font-size: 15px">Ngân Lê, IVORY, nm và 34 người khác</a>
                 <hr>
 
-                <div class="media mb-4">
-                    <img class="d-flex mr-3 rounded-circle avatar" src="images/10-avatar.jpg" alt="">
-                    <div class="media-body">
-                        <div class="row">
-                            <a href="#" class="name-reviewer">Cà phê giá sỉ &nbsp;</a>
-                            <p>hấp dẫn thật... good</p>
-                        </div>
+                <div id="blog-comment">
 
-                        <a href="#" style="font-size: 15px;">Thích &nbsp;</a>
-                        <a href="#" style="font-size: 15px;">Trả lời</a>
-                        <div class="media mt-4">
-                            <img class="d-flex mr-3 rounded-circle avatar" src="images/11-avatar.jpg" alt="">
-                            <div class="media-body">
-                                <div class="row">
-                                    <a href="#" class="name-reviewer">foodee_c95b0cfd &nbsp;</a>
-                                    <p>Bên mình chuyên cung cấp hạt cà phê rang xay nguyên chất 100% giá cả cạnh tranh,
-                                        giao hàng tận nơi trên
-                                        toàn quốc, tham khảo web: amajarocoffee.com, 0903674401</p>
-                                </div>
-                                <a href="#" style="font-size: 15px;">Thích &nbsp;</a>
-                                <a href="#" style="font-size: 15px;">Trả lời</a>
-                                - 8/11/2015 0:35
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="media mb-4">
-                    <img class="d-flex mr-3 rounded-circle avatar" src="images/12-avatar.jpg" alt="">
-                    <div class="media-body">
-                        <div class="row">
-                            <a href="#" class="name-reviewer">Bơ sáp &nbsp;</a>
-                            <p>thêm 1 quán Cafe đẹp độc cho buôn làng nè
-                                https://www.youtube.com/watch?v=EzkXq0QYGaE&t=69s</p>
-                        </div>
-                        <a href="#" style="font-size: 15px;">Thích &nbsp;</a>
-                        <a href="#" style="font-size: 15px;">Trả lời</a>
-                    </div>
                 </div>
                 <hr>
             </div>
@@ -471,7 +449,8 @@
     </script>
 
     <script>
-    showData(1);
+    showContent(2);
+    showComments(2);
     </script>
 </body>
 

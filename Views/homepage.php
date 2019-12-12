@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <?php 
+    <?php
     $user_name = "";
     session_start(); ?>
     <?php include ("../Controllers/handleHomePage.php");

@@ -1,5 +1,43 @@
 USE WebDatabase;
 
+INSERT INTO user(UserID, UserName, Sex, AccountName, Password, UserLevel)
+VALUES(
+    1,
+    'xxx',
+    1,
+    'abc@gmail.com',
+    '123456',
+    1
+);
+INSERT INTO user(UserID, UserName, Sex, AccountName, Password, UserLevel)
+VALUES(
+    2,
+    'Cà phê giá sỉ',
+    1,
+    'uuukkk@gmail.com',
+    '123456',
+    1
+);
+INSERT INTO user(UserID, UserName, Sex, AccountName, Password, UserLevel)
+VALUES(
+    3,
+    'foodee_c95b0cfd',
+    1,
+    'afcsda@gmail.com',
+    '123456',
+    1
+);
+INSERT INTO user(UserID, UserName, Sex, AccountName, Password, UserLevel)
+VALUES(
+    4,
+    'Bơ sáp',
+    0,
+    'afgsdd@gmail.com',
+    '123456',
+    1
+);
+
+
 INSERT INTO restaurant(ResID, Address, Name, Rating, WorkTime, PictureRes) 
 VALUES (
     1,
@@ -38,7 +76,7 @@ VALUES (
     8.1,
     NULL,
     1
-)
+);
 
 INSERT INTO reviews(
     ID, 
@@ -59,7 +97,7 @@ VALUES (
     8.9,
     NULL,
     1
-)
+);
 
 INSERT INTO reviews(
     ID, 
@@ -80,7 +118,7 @@ VALUES (
     7.5,
     NULL,
     2
-)
+);
 
 INSERT INTO reviews(
     ID, 
@@ -101,7 +139,7 @@ VALUES (
     9,
     NULL,
     2
-)
+);
 
 INSERT INTO blog(
     BlogID,
@@ -155,4 +193,106 @@ VALUES(
     5,
     1,
     'images/photo-post-1.jpg'          
+);
+
+INSERT INTO blog(
+    BlogID,
+    Title,
+    Content,
+    Time,
+    LikeCount,
+    Rating,
+    UserID,
+    Avatar
+) 
+VALUES(
+    2, 
+    'Top 3 địa điểm trên cao ngắm pháo hoa cực hot đêm giao thừa',
+    '<p class="content-text-intro">Nếu bạn không muốn phải chen lấn giữa dòng người đông đúc, bạn có thể 
+    lựa chọn ngồi ở các quán cà phê trên cao, vừa thu vào tầm mắt toàn bộ cảnh đêm huyền ảo của Hà Nội,
+    vừa dễ dàng ngắm nhìn những chùm pháo hoa sáng rực trên nền trời vào thời khắc giao thừa. 
+    Foody gợi ý cho bạn 10 địa điểm trên cao để bạn có thể ngắm pháo hoa cùng người thương nha!</p>
+    <img class="img-fluid rounded" src="images/photo-post2-1.jpg" alt="" width="700">
+
+    <h2 class="mt-3" style="color: red">1. Top of Ha Noi</h2>
+
+    <p class="content-text-para">Nằm trên tầng cao nhất của toà nhà Lotte Hanoi Centre 65 tầng là Top of Hanoi - nơi đảm bảo tầm nhìn không giới hạn của bạn ra toàn thành phố. Hãy thưởng thức các món ăn hiện đại, tận hưởng bầu không khí trẻ trung, và thả mình vào không gian thoáng đãng đến choáng ngợp của Hà Nội về đêm tại Top of Hanoi.</p>
+    
+    <img class="img-fluid rounded" src="images/photo-post2-2.jpg" alt="" width="700">
+    <img class="img-fluid rounded" src="images/photo-post2-3.jpg" alt="" width="700">
+
+    <p class="content-text-para">Từ độ cao 270m, bạn có thể ngắm ôm trọn vẹn nhiều khu, kiến trúc như: Hồ Tây, Lăng Chủ tịch Hồ Chí Minh, tòa nhà Keangnam.</p>
+    <img class="img-fluid rounded" src="images/photo-post2-4.jpg" alt="" width="700">
+    <p class="content-text-para">Với toàn bộ sàn, tường, trần đều là kính đem đến cho du khách trải nghiệm như đang lơ lửng từ trên cao.</p>
+    <img class="img-fluid rounded" src="images/photo-post2-5.jpg" alt="" width="700">
+
+    <h2 class="mt-3" style="color: red">2. 6 Degree Cafe</h2>
+    <p class="content-text-para">6 Degrees Cafe nằm ở tầng 2 và 8 địa chỉ số 189 Nghi Tàm, Tây Hồ, Hà Nội. Với thiết kế trẻ trung và lãng mạn, bạn có thể choáng ngợp với không gian quán ban đầu, nhưng sẽ dần dần cảm thấy ấm cúng và thân thiện bởi ánh đèn vàng ấm áp tràn ngập.</p>
+    
+    <img class="img-fluid rounded" src="images/photo-post2-6.jpg" alt="" width="700">
+    <p class="content-text-para">6 Degrees có thể hạ gục bạn ngay từ lần hẹn hò đầu tiên bởi tay nghề của những đầu bếp. Đã thế, tầm nhìn trên cao ngay tại phố Nghi Tàm – Hồ Tây lộng gió thôi cũng đã đủ đẹp khi đèn lên.</p>
+    <p class="content-text-para">Chủ quán đã hướng tới phong cách phương Tây từ thiết kế quán cafe, không gian từ bên ngoài và bên trong đến lên cao, rồi đến từng món ăn đều thể hiện hương vị Tây Âu rất đậm. Các món ăn được chế biến khá cầu kì, đẹp mắt. Nhưng đa phần mọi người vẫn thường lui tới đây để thưởng thức cafe, cocktail,… và các món tráng miệng hấp dẫn trong một khung cảnh Hà Nội lung linh, đầy mê hoặc.</p>
+    
+    <img class="img-fluid rounded" src="images/photo-post2-7.jpg" alt="" width="700">
+    <h2 class="mt-3" style="color: red">3. Summit Lounge</h2>
+    <p class="content-text-para">Nằm trên tầng 20 của khách sạn Sofitel Plaza, Summit Lounge có tầm nhìn đẹp bậc nhất tại Hà Nội. Quán chỉ mở cửa từ 16h mỗi ngày.</p>
+    <img class="img-fluid rounded" src="images/photo-post2-8.jpg" alt="" width="700">
+    <p class="content-text-para">Nếu muốn thưởng thức trà hay cà phê, bạn nên đến trước 20h vì sau khoảng thời gian đó, quán sẽ chỉ phục vụ các loại rượu và cocktail. </p>
+    ',
+    '10:17 10/12/2019',
+    20,
+    5,
+    1,
+    'images/photo-post2-1.jpg'          
+);
+
+INSERT INTO blogcomment(
+    CommentID,
+    BlogID,
+    UserID,
+    Content,
+    Time,
+    LikeCount
 )
+VALUES(
+    1,
+    1,
+    2,
+    'hấp dẫn thật... good',
+    '16:44 02/06/2018',
+    10
+);
+
+INSERT INTO blogcomment(
+    CommentID,
+    BlogID,
+    UserID,
+    Content,
+    Time,
+    LikeCount
+)
+VALUES(
+    2,
+    1,
+    3,
+    'Bên mình chuyên cung cấp hạt cà phê rang xay nguyên chất 100% giá cả cạnh tranh, giao hàng tận nơi trên toàn quốc, tham khảo web: amajarocoffee.com, 0903674401',
+    '23:22 05/06/2018',
+    1
+);
+
+INSERT INTO blogcomment(
+    CommentID,
+    BlogID,
+    UserID,
+    Content,
+    Time,
+    LikeCount
+)
+VALUES(
+    3,
+    1,
+    4,
+    'thêm 1 quán Cafe đẹp độc cho buôn làng nè https://www.youtube.com/watch?v=EzkXq0QYGaE&t=69s',
+    '19:37 04/06/2018',
+    4
+);
