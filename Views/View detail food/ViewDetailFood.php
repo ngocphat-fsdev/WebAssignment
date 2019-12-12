@@ -11,9 +11,10 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
     integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
@@ -26,10 +27,92 @@
 
 
   <link rel="stylesheet" type="text/css" href="ViewDetailFood.css">
+
+  <style>
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 60px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+      position: relative;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 0;
+      border: 1px solid #888;
+      width: 80%;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5),0 6px 20px 0 rgba(0,0,0,0.19);
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+      animation-name: animatetop;
+      animation-duration: 0.4s
+    }
+
+    /* Add Animation */
+    @-webkit-keyframes animatetop {
+      from {top:-300px; opacity:0} 
+      to {top:0; opacity:1}
+    }
+
+    @keyframes animatetop {
+      from {top:-300px; opacity:0}
+      to {top:0; opacity:1}
+    }
+
+    /* The Close Button */
+    .close {
+      color: white;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .modal-header {
+      padding: 2px 16px;
+      background-color: #C82333;
+      color: white;
+    }
+
+    .modal-body {padding: 2px 16px;}
+
+    .modal-footer {
+      padding: 2px 16px;
+      background-color: #C82333;
+      color: white;
+    }
+    .text{
+      font-size: 20px;
+    }
+    .btn-cart{
+      margin-left:20px;
+    }
+
+  </style>
 </head>
 
 <body style="background: white;">
   <!-------------------------------------------------------------->
+  <?php 
+    session_start();
+  ?>
   <div id="header-menu">
     <nav>
       <div class="nav nav-tabs" id="nav-tab" role="tablist" style="height: 40px;">
@@ -137,6 +220,57 @@
     </button>
   </nav>
 
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Xác nhận đơn hàng</h2>
+        <span class="close">&times;</span>
+      </div>
+
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-3 "><img class="img-food" alt="No image" src="bunchaca.jpg" /></div>
+
+          <div class="col-lg-7 offset-lg-2">
+            <h3>Chi tiết đơn hàng</h3>
+            <div class="row">
+              <div class="col-lg-9 font-weight-bold text">Cô Út - Bún Chả Cá Miền Trung </div>
+              <div class="col-lg-3"><h4>42.000đ</h4></div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-9"><h5>Tổng cộng 1 món </h5></div>
+              <div class="col-lg-3"><h5>42.000đ</h5></div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-9"><h5>Phí vận chuyển </h5></div>
+              <div class="col-lg-3"><h5>15.000đ</h5></div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-6"><h5>Mã khuyến mãi (giảm 10%)</h5></div>
+              <div class="col-lg-3"><input class="form-control" type="text" placeholder="Nhập mã" id="code"></div>
+              <div class="col-lg-3"><input class="btn btn-success" type="button" value="Áp dụng" onclick="discount()"></div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-9 font-weight-bold text">Tổng cộng</div>
+              <div class="col-lg-3 font-weight-bold text" id="total">57.000đ</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <i class="fas fa-check-circle"></i><input type="button" class="btn btn-primary" value='Hoàn tất đơn hàng' id="btn_complete_bill">
+      </div>
+    </div>
+  </div>
+
   <div class="detail-food clearfix">
     <div class="container">
       <div class="row">
@@ -147,6 +281,7 @@
           <a class="path-link" href="">TP.HCM >> </a>
           <a class="path-link" href="">Cô Út - Bún Chả Cá Miền Trung</a>
 
+          <a href="CartFood.php"><i class="fas fa-shopping-cart"> Xem giỏ hàng</i></a>
           <div class="restaurant">QUÁN ĂN</div>
           <div class="name-restaurant">Cô Út - Bún Chả Cá Miền Trung</div>
           <div class="start-rate"><img src="start_rate.PNG" alt="no image"> Lượt đánh giá từ Now</div>
@@ -185,7 +320,7 @@
               </div>
               <div class="res-common-minmaxprice">
                 <span class="fas fa-tag minmaxpriceicon"></span>
-                <span>20.000đ - 100.000đ</span>
+                <span>42.000đ</span>
               </div>
             </div>
           </div>
@@ -205,7 +340,40 @@
             </div>
           </div>
 
-          <button type="button" class="btn btn-danger"> <i class="fas fa-check-circle"></i> Đặt trước</button>
+          <button type="button" class="btn btn-danger" id="myBtn"> <i class="fas fa-check-circle"></i> Đặt trước</button>
+          <button type="button" class="btn btn-danger btn-cart" id="myCart"> <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+
+          <script>
+          // Get the modal
+          var modal = document.getElementById("myModal");
+
+          // Get the button that opens the modal
+          var btn = document.getElementById("myBtn");
+          var btn_bill = document.getElementById("btn_complete_bill");
+          // Get the <span> element that closes the modal
+          var span = document.getElementsByClassName("close")[0];
+
+          // When the user clicks the button, open the modal 
+          btn.onclick = function() {
+            modal.style.display = "block";
+          }
+
+          btn_bill.onclick = function(){
+            modal.style.display = "none";
+          }
+
+          // When the user clicks on <span> (x), close the modal
+          span.onclick = function() {
+            modal.style.display = "none";
+          }
+
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+          </script>
 
         </div>
       </div>
@@ -272,11 +440,9 @@
 
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Tìm món ">
-            <div class="input-group-append">
               <button class="btn btn-secondary" type="button">
                 <i class="fa fa-search"></i>
               </button>
-            </div>
           </div>
 
           <table class="table table-hover list-food">
@@ -297,7 +463,8 @@
                   </div>
                   <div class="discount"> 15.000 đ </div>
                 </td>
-                <td> <button type="button" class="btn btn-danger add-food"> <i class="fas fa-plus"></i> </button> </td>
+
+                <td> <p id="added_1"><p> <button type="button" class="btn btn-danger add-food" id="btn_add_1" > <i class="fas fa-plus"></i> </button> </td>
               </tr>
               <tr>
                 <th> <img src="banhcanhchaca.jpg" alt="No image" width="60" height="60"></th>
@@ -311,7 +478,8 @@
                   <div class="discount"> 20.000 đ </div>
                 </td>
                 <td>
-                  <button type="button" class="btn btn-danger add-food">
+                  <p id="added_2"><p>
+                  <button type="button" class="btn btn-danger add-food" id="btn_add_2">
                     <i class="fas fa-plus"></i>
                   </button>
                 </td>
@@ -328,7 +496,8 @@
                   <div class="discount"> 30.000 đ </div>
                 </td>
                 <td>
-                  <button type="button" class="btn btn-danger add-food">
+                <p id="added_3"><p>
+                  <button type="button" class="btn btn-danger add-food" id="btn_add_3">
                     <i class="fas fa-plus"></i>
                   </button>
                 </td>
@@ -345,7 +514,8 @@
                   <div class="discount"> 32.000 đ </div>
                 </td>
                 <td>
-                  <button type="button" class="btn btn-danger add-food">
+                <p id="added_4"><p>
+                  <button type="button" class="btn btn-danger add-food" id="btn_add_4">
                     <i class="fas fa-plus"></i>
                   </button>
                 </td>
@@ -362,7 +532,8 @@
                   <div class="discount"> 26.000 đ </div>
                 </td>
                 <td>
-                  <button type="button" class="btn btn-danger add-food">
+                <p id="added_5"><p>
+                  <button type="button" class="btn btn-danger add-food" id="btn_add_5">
                     <i class="fas fa-plus"></i>
                   </button>
                 </td>
@@ -379,7 +550,8 @@
                   <div class="discount"> 7.000 đ </div>
                 </td>
                 <td>
-                  <button type="button" class="btn btn-danger add-food">
+                <p id="added_6"><p>
+                  <button type="button" class="btn btn-danger add-food" id="btn_add_6">
                     <i class="fas fa-plus"></i>
                   </button>
                 </td>
@@ -396,7 +568,8 @@
                   <div class="discount"> 150.000 đ </div>
                 </td>
                 <td>
-                  <button type="button" class="btn btn-danger add-food">
+                <p id="added_7"><p>
+                  <button type="button" class="btn btn-danger add-food" id="btn_add_7">
                     <i class="fas fa-plus"></i>
                   </button>
                 </td>
@@ -413,20 +586,20 @@
                   <div class="discount"> 150.000 đ </div>
                 </td>
                 <td>
-                  <button type="button" class="btn btn-danger add-food">
+                <p id="added_8"><p>
+                  <button type="button" class="btn btn-danger add-food" id="btn_add_8">
                     <i class="fas fa-plus"></i>
                   </button>
                 </td>
               </tr>
             </tbody>
           </table>
-
+          <?php include ("../../Controllers/addCartFood.php");?>
         </div>
 
       </div>
     </div>
   </div>
-
   <!--Footer-->
   <div id="footer-cont">
     <!-------------------------------------------------------------->
