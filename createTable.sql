@@ -10,6 +10,16 @@ CREATE TABLE User (
     UserLevel       INT NOT NULL   
 );
 
+CREATE TABLE CartFood (
+    ID          INT UNSIGNED PRIMARY KEY,
+    NameFood    VARCHAR(255) NOT NULL,
+    LinkImage   VARCHAR(255),
+    Price       VARCHAR(255),
+    Amount      INT UNSIGNED,
+    TotalPrice  VARCHAR(255),
+    Status      VARCHAR(255) 
+);
+
 CREATE TABLE HotNews (
     PictureLink VARCHAR(255) NOT NULL,
     Title       VARCHAR(255) NOT NULL,
