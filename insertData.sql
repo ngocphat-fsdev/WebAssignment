@@ -38,7 +38,7 @@ VALUES (
     8.1,
     NULL,
     1
-)
+);
 
 INSERT INTO reviews(
     ID, 
@@ -59,7 +59,7 @@ VALUES (
     8.9,
     NULL,
     1
-)
+);
 
 INSERT INTO reviews(
     ID, 
@@ -80,7 +80,7 @@ VALUES (
     7.5,
     NULL,
     2
-)
+);
 
 INSERT INTO reviews(
     ID, 
@@ -101,4 +101,4 @@ VALUES (
     9,
     NULL,
     2
-)
+);
