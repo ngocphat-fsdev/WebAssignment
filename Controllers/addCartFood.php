@@ -34,7 +34,7 @@
             success: function(response){
                 //alert(response.localeCompare("no account"));
                 if(response == "no account"){
-                    window.location.replace("http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php");
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
                 }
                 else{
                     $("#myCart").text(response);
@@ -53,7 +53,7 @@
             success: function(response){
                 //alert(response.localeCompare("no account"));
                 if(response == "no account"){
-                    window.location.replace("http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php");
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
                 }
                 else{
                     $("#btn_add_1").hide();
@@ -75,7 +75,7 @@
             success: function(response){
                 //alert(response.localeCompare("no account"));
                 if(response == "no account"){
-                    window.location.replace("http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php");
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
                 }
                 else{
                     $("#btn_add_2").hide();
@@ -97,7 +97,7 @@
             success: function(response){
                 //alert(response.localeCompare("no account"));
                 if(response == "no account"){
-                    window.location.replace("http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php");
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
                 }
                 else{
                     $("#btn_add_3").hide();
@@ -120,7 +120,7 @@
             success: function(response){
                 //alert(response.localeCompare("no account"));
                 if(response == "no account"){
-                    window.location.replace("http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php");
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
                 }
                 else{
                     $("#btn_add_4").hide();
@@ -143,7 +143,7 @@
             success: function(response){
                 //alert(response.localeCompare("no account"));
                 if(response == "no account"){
-                    window.location.replace("http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php");
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
                 }
                 else{
                     $("#btn_add_5").hide();
@@ -166,7 +166,7 @@
             success: function(response){
                 //alert(response.localeCompare("no account"));
                 if(response == "no account"){
-                    window.location.replace("http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php");
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
                 }
                 else{
                     $("#btn_add_6").hide();
@@ -189,7 +189,7 @@
             success: function(response){
                 //alert(response.localeCompare("no account"));
                 if(response == "no account"){
-                    window.location.replace("http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php");
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
                 }
                 else{
                     $("#btn_add_7").hide();
@@ -212,7 +212,7 @@
             success: function(response){
                 //alert(response.localeCompare("no account"));
                 if(response == "no account"){
-                    window.location.replace("http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php");
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
                 }
                 else{
                     $("#btn_add_8").hide();
