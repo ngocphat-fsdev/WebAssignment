@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+    include "../Models/Reviews.php";
+    include "../Controllers/connectDB.php";
+?>
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -31,10 +36,10 @@
                         style="border-top-left-radius: 0;border-top-right-radius: 0;">
                         <p>Trang Chủ</p>
                     </a>
-                    <a class="nav-item nav-link" id="nav-profile-tab" href="hot.php" role="tab"
+                    <a class="nav-item nav-link" id="nav-profile-tab" href="search.php" role="tab"
                         aria-controls="nav-profile" aria-selected="true" target="_self"
                         style="border-top-left-radius: 0;border-top-right-radius: 0;">
-                        <p>Hot</p>
+                        <p>Search</p>
                     </a>
                     <a class="nav-item nav-link active" id="nav-contact-tab" href="review.php" role="tab"
                         aria-controls="nav-contact" aria-selected="false" target="_self"
@@ -73,10 +78,10 @@
                         style="border-top-left-radius: 0;border-top-right-radius: 0;">
                         <p>Trang Chủ</p>
                     </a>
-                    <a class="nav-item nav-link" id="nav-profile-tab" href="hot.php" role="tab"
+                    <a class="nav-item nav-link" id="nav-profile-tab" href="search.php" role="tab"
                         aria-controls="nav-profile" aria-selected="true"
                         style="border-top-left-radius: 0;border-top-right-radius: 0;">
-                        <p>Hot</p>
+                        <p>Search</p>
                     </a>
                     <a class="nav-item nav-link" id="nav-contact-tab" href="review.php" role="tab"
                         aria-controls="nav-contact" aria-selected="false"
@@ -152,29 +157,38 @@
         </div>
         <div class="content-container fd-clearbox ng-scope" ng-if="Items.length>0 &amp;&amp; Type!=6">
             <?php 
-                include "../Models/Reviews.php";
-                include "../Controllers/connectDB.php";
-                $sql = "SELECT * FROM Reviews";
+                $sql = "SELECT * FROM reviews INNER JOIN restaurant ON reviews.ResID = restaurant.ResID";
                 $result = mysqli_query($conn, $sql);
                 while($row = mysqli_fetch_assoc($result)){
-                    $newReview = new Reviews();
-                    $sql = 'SELECT * FROM Restaurant WHERE ResID = ?';
-                    $param = array($row['ResID']);
-                    $result_res = mysqli_query($conn, $sql);
-                    $item = mysqli_fetch_assoc($result_res);
-                    if ($item){
-                        $newRestaurant = new Restaurant($item);
-                    }
+                    $newReview = new Reviews(
+                        $row['ID'],
+                        $row['Title'],
+                        $row['Name'],
+                        $row['AddressOfReviewPlace'],
+                        $row['ReviewerName'],
+                        $row['ReviewContent'],
+                        $row['ReviewPoint'],
+                        $row['ReviewerAvatar'],
+                        $row['ReviewPicture'],
+                        $row['ReviewComment']
+                    );
             ?>
                 <!-- Begin Items -->
                 <div class="content-item ng-scope" ng-repeat="item in Items">
+                    <?php 
+                        if (isset($_SESSION['level'])){
+                            if ($_SESSION['level'] == 1){
+                                echo "<a href='#'>Edit</a>";
+                            }
+                        }
+                    ?>
                     <div class="avatar">
                         <a href="View detail food/ViewDetailFood.php" ng-href="/lam-dong/gout-coffee-pastry"
                             target="_blank"
                             ng-init="ImpressionGa(item,'O_DAU_', $index, DistrictId, '#slDistrictPlace option:selected')">
-                            <img ng-style="{'background':item.MobileBgColor}"
-                                src="https://images.foody.vn/res/g13/121593/prof/s640x400/foody-mobile-gour-mb-jpg-718-635870264494227313.jpg"
-                                ng-src="https://images.foody.vn/res/g13/121593/prof/s640x400/foody-mobile-gour-mb-jpg-718-635870264494227313.jpg">
+                            <img 
+                                src="<?php echo $row['PictureRes'] ?>"
+                                ng-src="<?php echo $row['PictureRes'] ?>">
                         </a>
                         <!-- ngIf: item.IsBooking || item.IsDelivery -->
                         <!-- ngIf: item.IsBooking || item.IsDelivery -->
@@ -195,7 +209,7 @@
                             </a>
                         </div>
                         <div class="desc fd-text-ellip ng-binding" ng-bind="item.Address"> 
-                            <?php echo $newRestaurant->getAddress(); ?>
+                            <?php echo $row['Address'] ?>
                         </div>
                     </div>
                     <!-- ngIf: item.LstReview.length<1 -->
@@ -204,7 +218,7 @@
                         <div class="avatar">
                             <a href="/thanh-vien/huyendk" ng-href="/thanh-vien/huyendk" target="_blank">
                                 <img ng-src="https://images.foody.vn/usr/g13/129812/avt/c100x100/beauty-upload-api-foody-avatar-194a3607-4349-4720-acb5-a345194f12a6-191019143129.jpg"
-                                    src="https://images.foody.vn/usr/g13/129812/avt/c100x100/beauty-upload-api-foody-avatar-194a3607-4349-4720-acb5-a345194f12a6-191019143129.jpg">
+                                    src="<?php echo $newReview->getReviewerAvatar() ?>">
                             </a>
                         </div>
                         <div class="users-content block-with-text" ng-class="{'not-align':rv.ShortReview}">
@@ -216,7 +230,20 @@
                             <a ng-href="/lam-dong/gout-coffee-pastry/binh-luan-2667132" ng-bind-html="rv.Comment"
                                 target="_blank" class="ng-binding"
                                 href="/lam-dong/gout-coffee-pastry/binh-luan-2667132">
-                                <?php echo $newReview->getReviewContent() ?>
+                                <?php //echo $newReview->getReviewContent() 
+                                    if ($newReview->getReviewPoint() < 5){
+                                        echo "đã đến và cảm thấy tệ";
+                                    }
+                                    elseif ($newReview->getReviewPoint() < 8){
+                                        echo "đã đến và cảm thấy bình thường";
+                                    }
+                                    elseif ($newReview->getReviewPoint() < 9){
+                                        echo "đã đến và cảm thấy khá ổn";
+                                    }
+                                    else{
+                                        echo "đã đến và cảm thấy tuyệt";
+                                    }
+                                ?>
                             </a>
 
                         </div>
@@ -235,6 +262,9 @@
                     </div>
                 </div>
                 <!-- End Items -->
+            <?php
+                }
+            ?>
             
         </div><!-- End -->
     </div>
@@ -245,72 +275,117 @@
             Review hay nhất
         </div>
         <div class="content-container fd-clearbox ng-scope" ng-if="Items.length>0 &amp;&amp; Type!=6">
-            <!-- Begin Items -->
-            <div class="content-item ng-scope" ng-repeat="item in Items" >
-                <div class="avatar">
-                    <a href="/lam-dong/sua-dau-nanh-cho-dem" ng-href="/lam-dong/sua-dau-nanh-cho-dem" target="_blank"
-                        ng-init="ImpressionGa(item,'O_DAU_', $index, DistrictId, '#slDistrictPlace option:selected')">
-                        <img ng-style="{'background':item.MobileBgColor}"
-                            src="https://images.foody.vn/res/g66/654386/prof/s640x400/foody-mobile-hmbbd-jpg-321-636286498823873544.jpg"
-                            ng-src="https://images.foody.vn/res/g66/654386/prof/s640x400/foody-mobile-hmbbd-jpg-321-636286498823873544.jpg"
-                            style="background: rgb(68, 54, 54);">
-                    </a>
-                    <!-- ngIf: item.IsBooking || item.IsDelivery -->
-                    <!-- ngIf: item.IsBooking || item.IsDelivery -->
-                    <!-- ngIf: item.HasVideo -->
-                </div>
-                <div class="items-content hide-points">
-                    <div class="review-points green"
-                        ng-class="{'green':item.AvgRating>=6,'grey':item.AvgRating==0 || item.AvgRating==null} ">
-                        <span class="ng-binding">6.6</span>
-                    </div>
-                    <div class="title fd-text-ellip">
-                        <a href="/lam-dong/sua-dau-nanh-cho-dem" ng-bind="item.Name" target="_blank"
-                            ng-click="ClickGA(item,'O_DAU_', $index, DistrictId, '#slDistrictPlace option:selected')"
-                            class="ng-binding">Sữa Đậu Nành Chợ Đêm</a>
-                    </div>
-                    <div class="desc fd-text-ellip ng-binding" ng-bind="item.Address">Chợ Đêm, Nguyễn Thị Minh Khai, Tp.
-                        Đà
-                        Lạt, Lâm Đồng</div>
-                </div>
-                <!-- ngIf: item.LstReview.length<1 -->
-                <!-- ngRepeat: rv in item.LstReview | limitTo:1 -->
-                <div class="items-review ng-scope" ng-repeat="rv in item.LstReview | limitTo:1">
+            <?php 
+                $sql = "SELECT * FROM reviews INNER JOIN restaurant ON reviews.ResID = restaurant.ResID ORDER BY reviews.ReviewPoint DESC";
+                $result = mysqli_query($conn, $sql);
+                while($row = mysqli_fetch_assoc($result)){
+                    $newReview = new Reviews(
+                        $row['ID'],
+                        $row['Title'],
+                        $row['Name'],
+                        $row['AddressOfReviewPlace'],
+                        $row['ReviewerName'],
+                        $row['ReviewContent'],
+                        $row['ReviewPoint'],
+                        $row['ReviewerAvatar'],
+                        $row['ReviewPicture'],
+                        $row['ReviewComment']
+                    );
+            ?>
+                <!-- Begin Items -->
+                <div class="content-item ng-scope" ng-repeat="item in Items">
+                    <?php 
+                        if (isset($_SESSION['level'])){
+                            if ($_SESSION['level'] == 1){
+                                echo "<a href='#'>Edit</a>";
+                            }
+                        }
+                    ?>
                     <div class="avatar">
-                        <a href="/thanh-vien/lanhchanh108" ng-href="/thanh-vien/lanhchanh108" target="_blank">
-                            <img ng-src="https://images.foody.vn/usr/g59/584653/avt/c100x100/lanhchanh108-avatar-445-637074256450811372.jpg"
-                                src="https://images.foody.vn/usr/g59/584653/avt/c100x100/lanhchanh108-avatar-445-637074256450811372.jpg">
+                        <a href="View detail food/ViewDetailFood.php" ng-href="/lam-dong/gout-coffee-pastry"
+                            target="_blank"
+                            ng-init="ImpressionGa(item,'O_DAU_', $index, DistrictId, '#slDistrictPlace option:selected')">
+                            <img 
+                                src="<?php echo $row['PictureRes'] ?>"
+                                ng-src="<?php echo $row['PictureRes'] ?>">
+                        </a>
+                        <!-- ngIf: item.IsBooking || item.IsDelivery -->
+                        <!-- ngIf: item.IsBooking || item.IsDelivery -->
+                        <!-- ngIf: item.HasVideo -->
+                    </div>
+                    <div class="items-content hide-points">
+                        <div class="review-points green"
+                            ng-class="{'green':item.AvgRating>=6,'grey':item.AvgRating==0 || item.AvgRating==null} ">
+                            <span class="ng-binding">
+                                <?php echo $newReview->getReviewPoint(); ?>
+                            </span>
+                        </div>
+                        <div class="title fd-text-ellip">
+                            <a href="View detail food/ViewDetailFood.php" ng-bind="item.Name" target="_blank"
+                                ng-click="ClickGA(item,'O_DAU_', $index, DistrictId, '#slDistrictPlace option:selected')"
+                                class="ng-binding">
+                                <?php echo $newReview->getReviewPlaceName(); ?>
+                            </a>
+                        </div>
+                        <div class="desc fd-text-ellip ng-binding" ng-bind="item.Address"> 
+                            <?php echo $row['Address'] ?>
+                        </div>
+                    </div>
+                    <!-- ngIf: item.LstReview.length<1 -->
+                    <!-- ngRepeat: rv in item.LstReview | limitTo:1 -->
+                    <div class="items-review ng-scope" ng-repeat="rv in item.LstReview | limitTo:1">
+                        <div class="avatar">
+                            <a href="/thanh-vien/huyendk" ng-href="/thanh-vien/huyendk" target="_blank">
+                                <img ng-src="https://images.foody.vn/usr/g13/129812/avt/c100x100/beauty-upload-api-foody-avatar-194a3607-4349-4720-acb5-a345194f12a6-191019143129.jpg"
+                                    src="<?php echo $newReview->getReviewerAvatar() ?>">
+                            </a>
+                        </div>
+                        <div class="users-content block-with-text" ng-class="{'not-align':rv.ShortReview}">
+                            <a ng-href="/thanh-vien/huyendk" target="_blank" href="/thanh-vien/huyendk">
+                                <b ng-bind="rv.reviewUserDisplayName" class="ng-binding">
+                                    <?php echo $newReview->getReviewerName(); ?>
+                                </b>
+                            </a>
+                            <a ng-href="/lam-dong/gout-coffee-pastry/binh-luan-2667132" ng-bind-html="rv.Comment"
+                                target="_blank" class="ng-binding"
+                                href="/lam-dong/gout-coffee-pastry/binh-luan-2667132">
+                                <?php //echo $newReview->getReviewContent() 
+                                    if ($newReview->getReviewPoint() < 5){
+                                        echo "đã đến và cảm thấy tệ";
+                                    }
+                                    elseif ($newReview->getReviewPoint() < 8){
+                                        echo "đã đến và cảm thấy bình thường";
+                                    }
+                                    elseif ($newReview->getReviewPoint() < 9){
+                                        echo "đã đến và cảm thấy khá ổn";
+                                    }
+                                    else{
+                                        echo "đã đến và cảm thấy tuyệt";
+                                    }
+                                ?>
+                            </a>
+
+                        </div>
+                    </div><!-- end ngRepeat: rv in item.LstReview | limitTo:1 -->
+
+                    <div class="items-count">
+                        <a ng-click="ShowPopupReviews(item.Id)"><i class="fa fa-comment"></i> <span
+                                ng-bind="item.TotalReviews|formatNK:1" class="ng-binding">59</span></a>
+                        <a ng-click="ShowPopupGallery(item.Id)"><i class="fa fa-camera"></i> <span
+                                ng-bind="item.TotalPictures|formatNK:1" class="ng-binding">368</span></a>
+
+                        <a href="javascript:void(0)" class="item-save tool-custom-list-add"
+                            ng-class="{'saved':item.IsSaved}" data-id="121593">
+
                         </a>
                     </div>
-                    <div class="users-content block-with-text" ng-class="{'not-align':rv.ShortReview}">
-                        <a ng-href="/thanh-vien/lanhchanh108" target="_blank" href="/thanh-vien/lanhchanh108">
-                            <b ng-bind="rv.reviewUserDisplayName" class="ng-binding">NuNa NuNong</b>
-                        </a>
-                        <a ng-href="/lam-dong/sua-dau-nanh-cho-dem/binh-luan-3293905" ng-bind-html="rv.Comment"
-                            target="_blank" class="ng-binding"
-                            href="/lam-dong/sua-dau-nanh-cho-dem/binh-luan-3293905">Mình
-                            đi hồi tháng 6 kìa, quần cái chợ này chắc cũng mấy đêm luoin á, tối là ra chợ đêm dạo, đi
-                            hồi
-                            thành 6 đi có 4 ngày mà mưa chắc cũng hơn 2 ngày ròii, buổi tối là trờic hay mưa lắm
-                            Chợ đêm đà lạt phải ...</a>
-
-                    </div>
-                </div><!-- end ngRepeat: rv in item.LstReview | limitTo:1 -->
-
-                <div class="items-count">
-                    <a ng-click="ShowPopupReviews(item.Id)"><i class="fa fa-comment"></i> <span
-                            ng-bind="item.TotalReviews|formatNK:1" class="ng-binding">7</span></a>
-                    <a ng-click="ShowPopupGallery(item.Id)"><i class="fa fa-camera"></i> <span
-                            ng-bind="item.TotalPictures|formatNK:1" class="ng-binding">21</span></a>
-
-                    <a href="javascript:void(0)" class="item-save tool-custom-list-add"
-                        ng-class="{'saved':item.IsSaved}" data-id="654386">
-
-                    </a>
                 </div>
-            </div>
-            <!-- End Items -->
-        </div>
+                <!-- End Items -->
+            <?php
+                }
+            ?>
+            
+        </div><!-- End -->
     </div>
 
     <!--******************************************************************-->
@@ -350,9 +425,6 @@
                 <p class="linkfoot-head">Giấy phép</p>
                 <p>MXH 363/GP-BTTTT</p>
                 <img src="./img/gov_seals.jpg" alt="certification">
-            </div>
-            <div id="final-logo">
-                <img src="./img/logo-foody.png" alt="logo foody">
             </div>
         </div>
         <!-------------------------------------------------------------->

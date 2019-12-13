@@ -29,10 +29,10 @@
                             style="border-top-left-radius: 0;border-top-right-radius: 0;">
                             <p>Trang Chủ</p>
                         </a>
-                        <a class="nav-item nav-link" id="nav-profile-tab" href="hot.php" role="tab"
+                        <a class="nav-item nav-link" id="nav-profile-tab" href="search.php" role="tab"
                             aria-controls="nav-profile" aria-selected="true" target="_self"
                             style="border-top-left-radius: 0;border-top-right-radius: 0;">
-                            <p>Hot</p>
+                            <p>Search</p>
                         </a>
                         <a class="nav-item nav-link" id="nav-contact-tab" href="review.php" role="tab"
                             aria-controls="nav-contact" aria-selected="false" target="_self"
@@ -71,10 +71,10 @@
                             style="border-top-left-radius: 0;border-top-right-radius: 0;">
                             <p>Trang Chủ</p>
                         </a>
-                        <a class="nav-item nav-link" id="nav-profile-tab" href="hot.php" role="tab"
+                        <a class="nav-item nav-link" id="nav-profile-tab" href="search.php" role="tab"
                             aria-controls="nav-profile" aria-selected="true"
                             style="border-top-left-radius: 0;border-top-right-radius: 0;">
-                            <p>Hot</p>
+                            <p>Search</p>
                         </a>
                         <a class="nav-item nav-link" id="nav-contact-tab" href="review.php" role="tab"
                             aria-controls="nav-contact" aria-selected="false"
