@@ -61,6 +61,7 @@
         $_SESSION['account']=$email;
         $_SESSION['password']=$password;
         $_SESSION['username']=$user_name;
+        $_SESSION['level'] = 1;
         header('Location: ../homepage.php');
     }
     ?>
