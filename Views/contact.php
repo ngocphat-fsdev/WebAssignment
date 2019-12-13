@@ -29,10 +29,10 @@
                             style="border-top-left-radius: 0;border-top-right-radius: 0;">
                             <p>Trang Chủ</p>
                         </a>
-                        <a class="nav-item nav-link" id="nav-profile-tab" href="search.php" role="tab"
+                        <a class="nav-item nav-link" id="nav-profile-tab" href="hot.php" role="tab"
                             aria-controls="nav-profile" aria-selected="true" target="_self"
                             style="border-top-left-radius: 0;border-top-right-radius: 0;">
-                            <p>Search</p>
+                            <p>Hot</p>
                         </a>
                         <a class="nav-item nav-link" id="nav-contact-tab" href="review.php" role="tab"
                             aria-controls="nav-contact" aria-selected="false" target="_self"
@@ -71,10 +71,10 @@
                             style="border-top-left-radius: 0;border-top-right-radius: 0;">
                             <p>Trang Chủ</p>
                         </a>
-                        <a class="nav-item nav-link" id="nav-profile-tab" href="search.php" role="tab"
+                        <a class="nav-item nav-link" id="nav-profile-tab" href="hot.php" role="tab"
                             aria-controls="nav-profile" aria-selected="true"
                             style="border-top-left-radius: 0;border-top-right-radius: 0;">
-                            <p>Search</p>
+                            <p>Hot</p>
                         </a>
                         <a class="nav-item nav-link" id="nav-contact-tab" href="review.php" role="tab"
                             aria-controls="nav-contact" aria-selected="false"
@@ -190,7 +190,7 @@
                                 <i class="fa fa-bell" aria-hidden="true"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                <a99 class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Action</a>
                                 <a class="dropdown-item" href="#">Another action</a>
                                 <a class="dropdown-item" href="#">Something else here</a>
                             </div>

@@ -158,13 +158,18 @@
                                 </div>
                             </div>
                             <div class="input-group mb-3" style="margin-right: 10px;">
-                                <input type="text" class="form-control" placeholder="Địa điểm, món ăn,..."
-                                    aria-label="Recipient's username" aria-describedby="button-addon2">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                    </button>
-                                </div>
+                            <input type="text" class="form-control" id="searchbox" placeholder="Địa điểm, món ăn,..." value="" aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="searchfunc()">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                                <script>
+                                    function searchfunc(){
+                                        key = document.getElementById("searchbox").value;
+                                        window.location = './search.php?key=' + key;
+                                    }
+                                </script>
+                            </div>
                             </div>
                             <div class="dropdown" style="margin-right: 10px; height: 40px;">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
@@ -184,7 +189,12 @@
                                 style="height: 38px;margin-right: 10px;">App</button>
                             <span
                                 style="width: 310px; height: 38px;margin-right: 10px;margin-top: 7px;margin-left: 10px;">
-                                <a href="#">Đăng Nhập</a>
+                                <a href="Login/Login.php" id="btn_login">Đăng Nhập</a>
+
+                                <form action="search.php" method="post" id="form_logout">
+                                <input type="text" value="<?php echo $user_name ?>" name="username" hidden>
+                                <a href="" id="username"><?php echo $user_name ?></a>
+                            </form>
                             </span>
                             <div class="dropdown" style="margin-right: 10px; height: 40px;">
                                 <button type="button" id="dropdownMenuButton" data-toggle="dropdown"

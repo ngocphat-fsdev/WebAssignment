@@ -45,16 +45,15 @@ CREATE TABLE Blog (
     LikeCount   INT NOT NULL,
     Rating      INT UNSIGNED NOT NULL,
     UserID      INT UNSIGNED,
-    FOREIGN KEY (UserID) REFERENCES User(UserID),
-    Avatar      VARCHAR(255) NOT NULL    
+    FOREIGN KEY (UserID) REFERENCES User(UserID)     
 );
 
 CREATE TABLE BlogComment(
     CommentID       INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     BlogID          INT UNSIGNED NOT NULL,
-    FOREIGN KEY (BlogID) REFERENCES Blog(BlogID),
+    FOREIGN KEY (BlogID) REFERENCES Blog(BlogID)
     UserID          INT UNSIGNED NOT NULL,
-    FOREIGN KEY (UserID) REFERENCES User(UserID),
+    FOREIGN KEY (UserID) REFERENCES User(UserID)
     Content         VARCHAR(255) NOT NULL,
     Time            VARCHAR(255) NOT NULL,
     LikeCount       INT UNSIGNED

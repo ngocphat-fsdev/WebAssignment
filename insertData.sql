@@ -38,31 +38,24 @@ VALUES(
 );
 
 
-INSERT INTO restaurant(Address, Name, Rating, WorkTime, PictureRes) 
+INSERT INTO restaurant(ResID, Address, Name, Rating, WorkTime, PictureRes) 
 VALUES (
+    1,
     '30 Huỳnh Tịnh Của, Quận 3, TP. HCM',
     'The Coffee House',
     8.4,
     '07:00-23:00',
     './images/coffee-house.jpg'
 );
-INSERT INTO restaurant(Address, Name, Rating, WorkTime, PictureRes) 
+INSERT INTO restaurant(ResID, Address, Name, Rating, WorkTime, PictureRes) 
 VALUES (
+    2,
     '29/24 Nguyễn Gia Trí (Đường D2), P. 25, Quận Bình Thạnh, TP.HCM',
     'Highland Fruits',
     8.4,
     '08:00-22:30',
     './images/highland-fruit.jpg'
 );
-INSERT INTO restaurant(Address, Name, Rating, WorkTime, PictureRes) 
-VALUES (
-    '264 Hoàng Văn Thái, Quận Tân Bình, TP.HCM',
-    'Sườn Mười - Sườn Nướng BBQ',
-    7.7,
-    '05:00-17:30',
-    './images/suon-muoi.jpg'
-);
-
 
 INSERT INTO reviews(
     ID, 
@@ -146,8 +139,6 @@ VALUES (
     9,
     NULL,
     2
-<<<<<<< HEAD
-=======
 );
 
 INSERT INTO blog(
@@ -255,59 +246,6 @@ VALUES(
     'images/photo-post2-1.jpg'          
 );
 
-INSERT INTO blog(
-    Title,
-    Content,
-    Time,
-    LikeCount,
-    Rating,
-    UserID,
-    Avatar
-) 
-VALUES(     
-    'Đu đưa trở thành THÁNH FASTFOOD dzựt ngay 2 TRIỆU ĐỒNG',
-    '<p class="content-text-intro">Đu đưa không phải là hư đu đưa là để lắc lư cho hết buồn.. Bởi vậy Cafo đi tìm truyền nhân "THÁNH FASTFOOD" để trao ngôi vị và trao luôn giải thưởng 2 TRIỆU ĐỒNG TIỀN MẶT nè, ai tự tin thấy mình trải nghiệm nhiều món fastfood nhất thì bơi nhanh hết vô đây đua kịch liền để trở thành "Thánh FastFood" nha!</p>
-    <img class="img-fluid rounded" src="images/photo-post3-1.jpg" alt="" width="700">
-
-    <h2 class="mt-3" style="color: red">Thể lệ tham gia</h2>
-
-    <p class="content-text-para">Bước 1: Đăng ký tham gia game "THÁNH FASTFOOD" bằng 2 cách:</p>
-    <p class="content-text-para">+ Cách 1: Comment Link tài khoản của bạn dưới bài post này.</p>
-    <p class="content-text-para">+ Cách 2: Comment Link tài khoản dưới bài post game "THÁNH FASTFOOD" trong group cộng đồng của các khu vực tại:</p>
-    ',
-    '10:17 10/12/2019',
-    44,
-    5,
-    3,
-    'images/photo-post3-1.jpg'          
-);
-
-INSERT INTO blog(
-    Title,
-    Content,
-    Time,
-    LikeCount,
-    Rating,
-    UserID,
-    Avatar
-) 
-VALUES(     
-    '(HCM) Ghé Thăm “Izakaya” Xịn Nhất Khu Trung Tâm Chợ Bến Thành',
-    '<p class="content-text-intro">Nằm ở hẻm 200 Lê Thánh Tôn, Kin Đee trở thành một đia điểm độc nhất vô nhị khi tọa lạc ngay gần khu chợ Bến Thành nhưng lại rời xa được những thanh âm ồn ào bên ngoài, giúp cho nơi đây trở thành một “izakaya” - một nơi "trốn-để-chill" khá hợp lý.</p>
-    <img class="img-fluid rounded" src="images/photo-post4-1.jpg" alt="" width="700">    
-    <p class="content-text-para">Là mô hình kết hợp giữa Izakaya (quán nhậu Nhật) với nền ẩm thực đường phố của Thái, bạn tới Kin Đee sẽ cảm thấy ngay tính phóng khoáng trong cách thiết kế của nơi này. Không gian quán với tông màu xi măng mộc mạc kết hợp trần nhà được làm rất cao, rất thoáng đãng, mang tới một không gian mà mọi người bắt đầu cởi bỏ áp lực công việc, tạm quên những lo nghĩ và vui vẻ tham gia vào bữa tiệc nhỏ.</p>
-    <img class="img-fluid rounded" src="images/photo-post4-2.jpg" alt="" width="700">    
-    <p class="content-text-para">Lấy cảm hứng như một Izakaya, Kin Đee với quầy bếp mở rộng, dù bạn ngồi ở góc nào, khi lia mắt về phía quầy đều thấy được những đầu bếp đang cần mẫn làm ra những món lai rai cho bạn nhé.</p>
-    <p class="content-text-para">Tông màu xám với bề mặt gồ ghề làm chủ đạo đi liền mạch từ phủ tường đến lớp nền màu xi măng bụi bặm, được điểm nhấn bằng những bóng đèn neon đặc sắc. Chưa kể, nét phóng khoáng đó còn là khi đan xen ở giữa những bàn khách ngồi với nhau thì sẽ có thêm các hàng cửa lưới được giăng lên, như kiểu ngồi ở một khu nào đó ở đường phố của Thái Lan. Chỉ cần là một thực khách nhạy bén, nơi này ngoài là một nơi lai rai, còn hứa hẹn là nơi bạn thu về hàng trăm tấm ảnh đẹp để mang về nhà.</p>
-    <img class="img-fluid rounded" src="images/photo-post4-3.jpg" alt="" width="700">    
-    ',
-    '10:17 10/12/2019',
-    44,
-    5,
-    3,
-    'images/photo-post3-1.jpg'          
-);
-
 INSERT INTO blogcomment(
     CommentID,
     BlogID,
@@ -357,5 +295,4 @@ VALUES(
     'thêm 1 quán Cafe đẹp độc cho buôn làng nè https://www.youtube.com/watch?v=EzkXq0QYGaE&t=69s',
     '19:37 04/06/2018',
     4
->>>>>>> aee382cb45600a2a0d7e3840a2903a3592c41d7c
 );
