@@ -25,6 +25,7 @@
                     $_SESSION['account']=$username;
                     $_SESSION['password']=$password;
                     $_SESSION['username']= $list_user[$i]->getName();
+                    $_SESSION['level'] = $list_user[$i]->getUserLevel();
                      header('Location: ../homepage.php');
                 }
                 else $logInFailed="Wrong password !";

@@ -3,20 +3,24 @@ class Blog
 {
     #object Models Blog (BlogID, PicLink, Content, Comment, Like, Dislike)
     private $BlogID;
-    private $PicLink;
+    private $Title;
     private $Content;
-    private $Comment;
+    private $Time;
     private $LikeCount;
-    private $DislikeCount;
+    private $Rating;
+    private $User;
+    private $Avatar;
 
-    public function __construct($BlogID, $PicLink, $Content, $Comment, $LikeCount, $DislikeCount)
+    public function __construct($BlogID, $Title, $Content, $Time, $LikeCount, $Rating, $User, $Avatar)
     {
         $this->BlogID = $BlogID;
-        $this->PicLink = $PicLink;
+        $this->Title = $Title;
         $this->Content = $Content;
-        $this->Comment = $Comment;
-        $this->Like = $LikeCount;
-        $this->Dislike = $DislikeCount;
+        $this->Time = $Time;
+        $this->LikeCount = $LikeCount;
+        $this->Rating = $Rating;
+        $this->User = $User;
+        $this->Avatar = $Avatar;
     }
 
     public function getBlogID()
@@ -24,9 +28,9 @@ class Blog
         return $this->BlogID;
     }
 
-    public function getPicLink()
+    public function getTitle()
     {
-        return $this->PicLink;
+        return $this->Title;
     }
 
     public function getContent()
@@ -34,18 +38,23 @@ class Blog
         return $this->Content;
     }
 
-    public function getComment()
+    public function getTime()
     {
-        return $this->Comment;
+        return $this->Time;
     }
 
-    public function getLikeCount()
+    public function getRating()
     {
-        return $this->LikeCount;
+        return $this->Rating;
     }
 
-    public function getDislikeCount()
+    public function getUser()
     {
-        return $this->DislikeCount;
+        return $this->User;
+    }
+
+    public function getAvatar()
+    {
+        return $this->Avatar;
     }
 }
