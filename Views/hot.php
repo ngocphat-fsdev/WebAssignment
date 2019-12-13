@@ -147,7 +147,7 @@
     <div class="list-content">
         <ul class="list-news-item">
             <li>
-                <a href="news-content.php">
+                <a href="news-content.php?BlogID=1">
                     <div class="img-container">
                         <img data-parent="$(this).parent()" data-rescale-on-resize="false" data-align="center"
                             src="images/photo-post-1.jpg" data-is-lazyload="false" data-is-fail="false"
@@ -173,18 +173,18 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="news-content.php?BlogID=2">
                     <div class="img-container">
                         <img data-scale="best-fill" data-parent="$(this).parent()" data-rescale-on-resize="false"
-                            data-align="center" src="images/đà-lạt1.jpg" data-is-lazyload="false" data-is-fail="false"
+                            data-align="center" src="images/photo-post2-1.jpg" data-is-lazyload="false" data-is-fail="false"
                             style="background: none;">
                     </div>
                     <div class="content">
                         <span class="line-ellipsis">
-                            Xuất hiện một Đà Lạt giữa lòng Sài Gòn
+                            Top 3 địa điểm trên cao ngắm pháo hoa cực hot đêm giao thừa
                         </span>
                         <span class="ddd" data-ddd-line="2" style="overflow-wrap: break-word;">
-                            Đà Lạt là một thành phố nên thơ vô cùng
+                            Nếu bạn không muốn phải chen lấn giữa dòng người đông đúc
                         </span>
                         <div class="g_child_count">
                             <i class="fa fa-eye"></i>
@@ -200,16 +200,16 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="news-content.php?BlogID=3">
                     <div class="img-container">
                         <img data-scale="best-fill" data-parent="$(this).parent()" data-rescale-on-resize="false"
-                            data-align="center" src="images/trasua.jpg" data-is-lazyload="false" data-is-fail="false"
+                            data-align="center" src="images/photo-post3-1.jpg" data-is-lazyload="false" data-is-fail="false"
                             style="background: none;">
                     </div>
                     <div class="content">
-                        <span class="line-ellipsis">Top 5 Quán "Tà Tưa" đáng thử nhất</span>
+                        <span class="line-ellipsis">Đu đưa trở thành THÁNH FASTFOOD dzựt ngay 2 TRIỆU ĐỒNG</span>
                         <span class="ddd" data-ddd-line="2" style="overflow-wrap: break-word;">
-                            Đối với đại đa số mọi người, "Tà Tưa" không còn là thức uống quá xa lạ ...
+                            Đu đưa không phải là hư đu đưa là để lắc lư cho hết buồn.. Bởi vậy
                         </span>
                         <div class="g_child_count">
                             <i class="fa fa-eye"></i>
@@ -224,19 +224,17 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="news-content.php?BlogID=4">
                     <div class="img-container">
                         <img data-scale="best-fill" data-parent="$(this).parent()" data-rescale-on-resize="false"
-                            data-align="center" src="images/banhbao.jpg" data-is-lazyload="false" data-is-fail="false"
+                            data-align="center" src="images/photo-post4-1.jpg" data-is-lazyload="false" data-is-fail="false"
                             style="background: none;">
                     </div>
                     <div class="content">
                         <span class="line-ellipsis">
-                            Nóng hôi hổi 1001 HÀNG BÁNH BAO NGON "TUYỆT CÚ MÈO" khắp Hà Nội
+                            (HCM) Ghé Thăm "Izakaya" Xịn Nhất Khu Trung Tâm Chợ Bến Thành
                         </span>
-                        <span class="ddd" data-ddd-line="2" style="overflow-wrap: break-word;">Bánh bao là món ăn vặt
-                            quen
-                            thuộc của bấ</span>
+                        <span class="ddd" data-ddd-line="2" style="overflow-wrap: break-word;">Nằm ở hẻm 200 Lê Thánh Tôn, Kin Đee trở thành một đia điểm độc nhất vô nhị</span>
                         <div class="g_child_count">
                             <i class="fa fa-eye"></i>
                             <span>55</span>
