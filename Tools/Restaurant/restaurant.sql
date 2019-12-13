@@ -1,0 +1,12 @@
+INSERT INTO restaurant VALUES ('3', '197C Lê Hồng Phong, P. 4,  Quận 5, TP. HCM', 'Quán Yến - Bún cá sứa Nha Trang ', '6.3', '07:00 - 21:00 ', './images/cardhome1.jpg');
+INSERT INTO restaurant VALUES ('4', '388 Nguyễn Chí Thanh, P. 5,  Quận 10, TP. HCM', 'Sawadee Milk Tea', '8.0', '08:00 - 22:00', './images/cardhome2.jpg');
+UPDATE restaurant SET Name = 'Quán Yến', Address = '197C Lê Hồng Phong, P. 4,  Quận 5, TP. HCM', ResID = '3', Rating = '6.3', WorkTime = '07:00 - 21:00 ', PictureRes = './images/cardhome1.jpg' WHERE ResID=3;
+INSERT INTO restaurant VALUES ('5', '98 Nguyễn Văn Đậu, P. 7,  Quận Bình Thạnh, TP. HCM', 'Bún Măng Vịt', '7.2', '07:00 - 21:00', './images/cardhome3.jpg');
+INSERT INTO restaurant VALUES ('6', '188 Nguyễn Thái Sơn, P. 4,  Quận Gò Vấp, TP. HCM', 'Cô Ba Sài Gòn', '7.8', '08:00 - 21:00', './images/cardhome4.jpg');
+INSERT INTO restaurant VALUES ('7', '188 Nguyễn Thái Sơn, P. 4,  Quận Gò Vấp, TP. HCM', 'Chasu - Nước Giải Nhiệt', '7.9', '08:00 - 21:00', './images/cardhome5.jpg');
+INSERT INTO restaurant VALUES ('8', '195 Cao Đạt, P. 1,  Quận 5, TP. HCM', 'Dũng Cafe - Cao Đạt', '7.8', '07:00 - 22:00', './images/cardhome6.jpg');
+UPDATE restaurant SET Name = 'Chasu', Address = '188 Nguyễn Thái Sơn, P. 4,  Quận Gò Vấp, TP. HCM', ResID = '7', Rating = '7.9', WorkTime = '08:00 - 21:00', PictureRes = './images/cardhome5.jpg' WHERE ResID=7;
+INSERT INTO restaurant VALUES ('9', '6 Trần Khắc Chân, P. Tân Định,  Quận 1, TP. HCM', 'Juice Me', '8.3', '07:30 - 21:30', './images/cardhome7.jpg');
+INSERT INTO restaurant VALUES ('10', '229 - 231 Đinh Tiên Hoàng, P. Tân Định,  Quận 1, TP. HCM', 'Gogi House', '6.7', '10:00 - 22:00', './images/cardhome8.jpg');
+INSERT INTO restaurant VALUES ('11', '454 Tên Lửa, P. Bình Trị Đông B,  Quận Bình Tân, TP. HCM', 'Mì Trộn Densan', '7.2', '08:00 - 23:59', './images/cardhome9.jpg');
+INSERT INTO restaurant VALUES ('12', '120F Đinh Tiên Hoàng, P. Đa Kao,  Quận 1, TP. HCM', 'Waffle Place', '7.8', '09:00 - 21:30', './images/cardhome10.jpg');
