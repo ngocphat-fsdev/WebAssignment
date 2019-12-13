@@ -13,6 +13,7 @@
                 $("#btn_add_"+name_cookie[1]).hide();
                 $("#added_"+name_cookie[1]).show();
                 $("#added_"+name_cookie[1]).html("Đã thêm");
+                $("#myCart_"+name_cookie[1]).html("Đã thêm");
             }
         }
     }
@@ -25,7 +26,7 @@
         }
     }
 
-    $("#myCart").click(function(){
+    $("#myCart_9").click(function(){
         $.ajax({    //create an ajax to request 
             type: "POST",
             url: "../../Controllers/handleAdd.php",
@@ -34,10 +35,10 @@
             success: function(response){
                 //alert(response.localeCompare("no account"));
                 if(response == "no account"){
-                    window.location.replace("http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php");
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
                 }
                 else{
-                    $("#myCart").text(response);
+                    $("#myCart_9").text(response);
                 }   
             }
         });
@@ -53,7 +54,7 @@
             success: function(response){
                 //alert(response.localeCompare("no account"));
                 if(response == "no account"){
-                    window.location.replace("http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php");
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
                 }
                 else{
                     $("#btn_add_1").hide();
@@ -75,7 +76,7 @@
             success: function(response){
                 //alert(response.localeCompare("no account"));
                 if(response == "no account"){
-                    window.location.replace("http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php");
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
                 }
                 else{
                     $("#btn_add_2").hide();
@@ -97,7 +98,7 @@
             success: function(response){
                 //alert(response.localeCompare("no account"));
                 if(response == "no account"){
-                    window.location.replace("http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php");
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
                 }
                 else{
                     $("#btn_add_3").hide();
@@ -120,7 +121,7 @@
             success: function(response){
                 //alert(response.localeCompare("no account"));
                 if(response == "no account"){
-                    window.location.replace("http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php");
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
                 }
                 else{
                     $("#btn_add_4").hide();
@@ -143,7 +144,7 @@
             success: function(response){
                 //alert(response.localeCompare("no account"));
                 if(response == "no account"){
-                    window.location.replace("http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php");
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
                 }
                 else{
                     $("#btn_add_5").hide();
@@ -166,7 +167,7 @@
             success: function(response){
                 //alert(response.localeCompare("no account"));
                 if(response == "no account"){
-                    window.location.replace("http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php");
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
                 }
                 else{
                     $("#btn_add_6").hide();
@@ -189,7 +190,7 @@
             success: function(response){
                 //alert(response.localeCompare("no account"));
                 if(response == "no account"){
-                    window.location.replace("http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php");
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
                 }
                 else{
                     $("#btn_add_7").hide();
@@ -212,7 +213,7 @@
             success: function(response){
                 //alert(response.localeCompare("no account"));
                 if(response == "no account"){
-                    window.location.replace("http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php");
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
                 }
                 else{
                     $("#btn_add_8").hide();
@@ -223,6 +224,223 @@
         });
 
         document.cookie="food_8 = added";
+    });
+
+    $("#myCart_10").click(function(){
+        $.ajax({    //create an ajax to request 
+            type: "POST",
+            url: "../../Controllers/handleAdd.php",
+            dataType: "json",   
+            data: {"Add": "add", id:10, nameFood: "Coffee house-Cookies đá xay", linkImage:"coffeehouse.jpg", price:"42.000đ", amount:1, totalprice: "42.000đ" ,status:"Đã thêm"},        
+            success: function(response){
+                //alert(response.localeCompare("no account"));
+                if(response == "no account"){
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
+                }
+                else{
+                    $("#myCart_10").text(response);
+                }   
+            }
+        });
+        document.cookie="food_10 = added";
+    });
+
+    $("#btn_add_11").click(function(){
+        $.ajax({    //create an ajax to request 
+            type: "POST",
+            url: "../../Controllers/handleAdd.php",
+            dataType: "json",   
+            data: {"Add": "add", id:11, nameFood: "Trà đen Macchiato", linkImage:"tradenmacchiato.jpg", price:"42.000đ", amount:1, totalprice: "42.000đ" ,status:"Đã thêm"},        
+            success: function(response){
+                //alert(response.localeCompare("no account"));
+                if(response == "no account"){
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
+                }
+                else{
+                    $("#btn_add_11").hide();
+                    $("#added_1").show();
+                    $("#added_1").html(response);
+                }   
+            }
+        });
+        document.cookie="food_11 = added";
+    });
+
+    
+    $("#btn_add_12").click(function(){
+        $.ajax({    //create an ajax to request 
+            type: "POST",
+            url: "../../Controllers/handleAdd.php",
+            dataType: "json",   
+            data: {"Add": "add", id:12, nameFood: "Matcha Macchiato", linkImage:"matcha.jpg", price:"40.000đ", amount:1, totalprice:"40.000đ",status:"Đã thêm"},        
+            success: function(response){
+                //alert(response.localeCompare("no account"));
+                if(response == "no account"){
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
+                }
+                else{
+                    $("#btn_add_2_coffeehouse").hide();
+                    $("#added_2").show();
+                    $("#added_2").html(response);
+                }   
+            }
+        });
+        document.cookie="food_12 = added";
+    });
+
+    
+    $("#btn_add_13").click(function(){
+        $.ajax({    //create an ajax to request 
+            type: "POST",
+            url: "../../Controllers/handleAdd.php",
+            dataType: "json",   
+            data: {"Add": "add", id:13, nameFood: "Trà đào cam sả đá", linkImage:"tradao.jpg", price:"35.000đ", amount:1, totalprice:"35.000đ",status:"Đã thêm"},        
+            success: function(response){
+                //alert(response.localeCompare("no account"));
+                if(response == "no account"){
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
+                }
+                else{
+                    $("#btn_add_13").hide();
+                    $("#added_3").show();
+                    $("#added_3").html(response);
+                }   
+            }
+        });
+
+        document.cookie="food_13 = added";
+    });
+
+    
+    $("#btn_add_14").click(function(){
+        $.ajax({    //create an ajax to request 
+            type: "POST",
+            url: "../../Controllers/handleAdd.php",
+            dataType: "json",   
+            data: {"Add": "add", id:14, nameFood: "Sô cô la đá xay", linkImage:"socoladaxay.jpg", price:"42.000đ", amount:1, totalprice:"42.000đ",status:"Đã thêm"},        
+            success: function(response){
+                //alert(response.localeCompare("no account"));
+                if(response == "no account"){
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
+                }
+                else{
+                    $("#btn_add_14").hide();
+                    $("#added_4").show();
+                    $("#added_4").html(response);
+                }   
+            }
+        });
+
+        document.cookie="food_14 = added";
+    });
+
+
+    $("#myCart_15").click(function(){
+        $.ajax({    //create an ajax to request 
+            type: "POST",
+            url: "../../Controllers/handleAdd.php",
+            dataType: "json",   
+            data: {"Add": "add", id:15, nameFood: "Combo 3 đồ uống", linkImage:"highlands.jpg", price:"42.000đ", amount:1, totalprice: "42.000đ" ,status:"Đã thêm"},        
+            success: function(response){
+                //alert(response.localeCompare("no account"));
+                if(response == "no account"){
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
+                }
+                else{
+                    $("#myCart_15").text(response);
+                }   
+            }
+        });
+        document.cookie="food_15 = added";
+    });
+
+    $("#btn_add_16").click(function(){
+        $.ajax({    //create an ajax to request 
+            type: "POST",
+            url: "../../Controllers/handleAdd.php",
+            dataType: "json",   
+            data: {"Add": "add", id:16, nameFood: "Phin sữa đá", linkImage:"phinsuada.jpg", price:"28.000đ", amount:1, totalprice: "28.000đ" ,status:"Đã thêm"},        
+            success: function(response){
+                //alert(response.localeCompare("no account"));
+                if(response == "no account"){
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
+                }
+                else{
+                    $("#btn_add_16").hide();
+                    $("#added_1").show();
+                    $("#added_1").html(response);
+                }   
+            }
+        });
+        document.cookie="food_16 = added";
+    });
+
+    
+    $("#btn_add_17").click(function(){
+        $.ajax({    //create an ajax to request 
+            type: "POST",
+            url: "../../Controllers/handleAdd.php",
+            dataType: "json",   
+            data: {"Add": "add", id:17, nameFood: "Phin đen đá", linkImage:"phindenda.jpg", price:"28.000đ", amount:1, totalprice:"28.000đ",status:"Đã thêm"},        
+            success: function(response){
+                //alert(response.localeCompare("no account"));
+                if(response == "no account"){
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
+                }
+                else{
+                    $("#btn_add_17").hide();
+                    $("#added_2").show();
+                    $("#added_2").html(response);
+                }   
+            }
+        });
+        document.cookie="food_17 = added";
+    });
+
+    
+    $("#btn_add_18").click(function(){
+        $.ajax({    //create an ajax to request 
+            type: "POST",
+            url: "../../Controllers/handleAdd.php",
+            dataType: "json",   
+            data: {"Add": "add", id:18, nameFood: "Bạc xỉu", linkImage:"bacxiu.jpg", price:"28.000đ", amount:1, totalprice:"28.000đ",status:"Đã thêm"},        
+            success: function(response){
+                //alert(response.localeCompare("no account"));
+                if(response == "no account"){
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
+                }
+                else{
+                    $("#btn_add_18").hide();
+                    $("#added_3").show();
+                    $("#added_3").html(response);
+                }   
+            }
+        });
+
+        document.cookie="food_18 = added";
+    });
+
+    
+    $("#btn_add_19").click(function(){
+        $.ajax({    //create an ajax to request 
+            type: "POST",
+            url: "../../Controllers/handleAdd.php",
+            dataType: "json",   
+            data: {"Add": "add", id:19, nameFood: "Phin sữa nóng", linkImage:"phinsuanong.jpg", price:"28.000đ", amount:1, totalprice:"28.000đ",status:"Đã thêm"},        
+            success: function(response){
+                //alert(response.localeCompare("no account"));
+                if(response == "no account"){
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
+                }
+                else{
+                    $("#btn_add_19").hide();
+                    $("#added_4").show();
+                    $("#added_4").html(response);
+                }   
+            }
+        });
+
+        document.cookie="food_19 = added";
     });
 
 </script>
