@@ -14,8 +14,8 @@ if (isset($_SESSION['account']) && isset($_GET['BlogID']) && isset($_GET['conten
         LikeCount
     ) 
     VALUES(
-    1,
-    1,
+    '. $_GET['BlogID'] .',
+    '. $_SESSION['UserID'] .',
     "' . $_GET['content'] . '",
     "16:44 02/06/2018",
     0)';

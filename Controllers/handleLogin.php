@@ -22,6 +22,7 @@
         for($i = 0 ; $i < count($list_user); $i++){
             if($username == $list_user[$i]->getAccountName()){
                 if($password == $list_user[$i]->getPassword()){
+                    $_SESSION['UserID']=$list_user[$i]->getID();
                     $_SESSION['account']=$username;
                     $_SESSION['password']=$password;
                     $_SESSION['username']= $list_user[$i]->getName();

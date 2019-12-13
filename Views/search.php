@@ -14,6 +14,14 @@
     <link href="css/search-style.css" rel="stylesheet">
 
     <script>
+    function gup(name, url) {
+        if (!url) url = location.href;
+        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+        var regexS = "[\\?&]" + name + "=([^&#]*)";
+        var regex = new RegExp(regexS);
+        var results = regex.exec(url);
+        return results == null ? null : results[1];
+    }
     function loadXMLDoc() {
         var xmlhttp;
         if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
@@ -23,7 +31,8 @@
         return xmlhttp;
     }
 
-    function showData(key) {
+    function showData() {
+        key = gup('key', location.url);
         var xmlhttp = loadXMLDoc();
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4)
@@ -380,7 +389,7 @@
     </script>
 
     <script>
-    showData("f");
+    showData();
     </script>
 </body>
 
