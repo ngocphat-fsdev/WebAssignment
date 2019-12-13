@@ -146,6 +146,8 @@ VALUES (
     9,
     NULL,
     2
+<<<<<<< HEAD
+=======
 );
 
 INSERT INTO blog(
@@ -355,4 +357,5 @@ VALUES(
     'thêm 1 quán Cafe đẹp độc cho buôn làng nè https://www.youtube.com/watch?v=EzkXq0QYGaE&t=69s',
     '19:37 04/06/2018',
     4
+>>>>>>> aee382cb45600a2a0d7e3840a2903a3592c41d7c
 );
