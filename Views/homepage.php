@@ -135,7 +135,7 @@
                                     <i class="fa fa-search" aria-hidden="true"></i>
                                 </button>
                                 <script>
-                                    function searchfunc(){
+                                    function searchfunc() {
                                         key = document.getElementById("searchbox").value;
                                         window.location = './search.php?key=' + key;
                                     }
@@ -442,17 +442,17 @@
                 $result = mysqli_query($conn, "SELECT * FROM user ORDER BY UserID ASC");
                 $list_user = array();
                 $row_count = $result->num_rows;
-                if($row_count > 0){
-                    while ($row = mysqli_fetch_array($result)){
+                if ($row_count > 0) {
+                    while ($row = mysqli_fetch_array($result)) {
                         $user = new User($row['UserID'], $row['UserName'], $row['Sex'], $row['AccountName'], $row['Password'], $row['UserLevel']);
                         array_push($list_user, $user);
                     }
                 }
-                for($i = 0 ; $i < count($list_user); $i++){
-                    if($username == $list_user[$i]->getAccountName()){
-                        if($password == $list_user[$i]->getPassword()){
+                for ($i = 0; $i < count($list_user); $i++) {
+                    if ($username == $list_user[$i]->getAccountName()) {
+                        if ($password == $list_user[$i]->getPassword()) {
                             $_SESSION['level'] = $list_user[$i]->getUserLevel();
-                        }    
+                        }
                     }
                 }
                 $row = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM restaurant where ResID = 3"));
@@ -461,15 +461,15 @@
                 <div class="card1 card">
                     <img src="<?php echo $newRes->getPicture(); ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="http://localhost:8080/Assignment/Views/View%20detail%20food/ViewDetailFood.php?key=<?php echo $newRes->getResID()?>">
+                        <a href="./View detail food/ViewDetailFood.php?key=<?php echo $newRes->getResID() ?>">
                             <h5 class="card-title"><?php echo $newRes->getName(); ?></h5>
                         </a>
                         <p class="card-text"><?php echo $newRes->getAddress(); ?></p>
                         <?php
-                            if (isset($_SESSION["level"])){
-                            if ($_SESSION["level"] == 0){
-                                echo "<a href=\"admin/resume-add.php?resid=".$newRes->getResID()."\">Edit</a>";
-                            } 
+                        if (isset($_SESSION["level"])) {
+                            if ($_SESSION["level"] == 0) {
+                                echo "<a href=\"admin/resume-add.php?resid=" . $newRes->getResID() . "\">Edit</a>";
+                            }
                         }
                         ?>
                     </div>
@@ -481,15 +481,15 @@
                 <div class="card2 card">
                     <img src="<?php echo $newRes->getPicture(); ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="#">
+                        <a href="./View detail food/ViewDetailFoodOverall.php?key=<?php echo $newRes->getResID() ?>">
                             <h5 class="card-title"><?php echo $newRes->getName(); ?></h5>
                         </a>
                         <p class="card-text"><?php echo $newRes->getAddress(); ?></p>
                         <?php
-                            if (isset($_SESSION["level"])){
-                            if ($_SESSION["level"] == 0){
-                                echo "<a href=\"admin/resume-add.php?resid=".$newRes->getResID()."\">Edit</a>";
-                            } 
+                        if (isset($_SESSION["level"])) {
+                            if ($_SESSION["level"] == 0) {
+                                echo "<a href=\"admin/resume-add.php?resid=" . $newRes->getResID() . "\">Edit</a>";
+                            }
                         }
                         ?>
                     </div>
@@ -501,15 +501,15 @@
                 <div class="card3 card">
                     <img src="<?php echo $newRes->getPicture(); ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="#">
+                        <a href="./View detail food/ViewDetailFoodOverall.php?key=<?php echo $newRes->getResID()?>">
                             <h5 class="card-title"><?php echo $newRes->getName(); ?></h5>
                         </a>
                         <p class="card-text"><?php echo $newRes->getAddress(); ?></p>
                         <?php
-                            if (isset($_SESSION["level"])){
-                            if ($_SESSION["level"] == 0){
-                                echo "<a href=\"admin/resume-add.php?resid=".$newRes->getResID()."\">Edit</a>";
-                            } 
+                        if (isset($_SESSION["level"])) {
+                            if ($_SESSION["level"] == 0) {
+                                echo "<a href=\"admin/resume-add.php?resid=" . $newRes->getResID() . "\">Edit</a>";
+                            }
                         }
                         ?>
                     </div>
@@ -521,15 +521,15 @@
                 <div class="card4 card">
                     <img src="<?php echo $newRes->getPicture(); ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="#">
+                        <a href="./View detail food/ViewDetailFoodOverall.php?key=<?php echo $newRes->getResID()?>">
                             <h5 class="card-title"><?php echo $newRes->getName(); ?></h5>
                         </a>
                         <p class="card-text"><?php echo $newRes->getAddress(); ?></p>
                         <?php
-                            if (isset($_SESSION["level"])){
-                            if ($_SESSION["level"] == 0){
-                                echo "<a href=\"admin/resume-add.php?resid=".$newRes->getResID()."\">Edit</a>";
-                            } 
+                        if (isset($_SESSION["level"])) {
+                            if ($_SESSION["level"] == 0) {
+                                echo "<a href=\"admin/resume-add.php?resid=" . $newRes->getResID() . "\">Edit</a>";
+                            }
                         }
                         ?>
                     </div>
@@ -541,15 +541,15 @@
                 <div class="card5 card">
                     <img src="<?php echo $newRes->getPicture(); ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="#">
+                        <a href="./View detail food/ViewDetailFoodOverall.php?key=<?php echo $newRes->getResID()?>">
                             <h5 class="card-title"><?php echo $newRes->getName(); ?></h5>
                         </a>
                         <p class="card-text"><?php echo $newRes->getAddress(); ?></p>
                         <?php
-                            if (isset($_SESSION["level"])){
-                            if ($_SESSION["level"] == 0){
-                                echo "<a href=\"admin/resume-add.php?resid=".$newRes->getResID()."\">Edit</a>";
-                            } 
+                        if (isset($_SESSION["level"])) {
+                            if ($_SESSION["level"] == 0) {
+                                echo "<a href=\"admin/resume-add.php?resid=" . $newRes->getResID() . "\">Edit</a>";
+                            }
                         }
                         ?>
                     </div>
@@ -561,15 +561,15 @@
                 <div class="card6 card">
                     <img src="<?php echo $newRes->getPicture(); ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="#">
+                        <a href="./View detail food/ViewDetailFoodOverall.php?key=<?php echo $newRes->getResID()?>">
                             <h5 class="card-title"><?php echo $newRes->getName(); ?></h5>
                         </a>
                         <p class="card-text"><?php echo $newRes->getAddress(); ?></p>
                         <?php
-                            if (isset($_SESSION["level"])){
-                            if ($_SESSION["level"] == 0){
-                                echo "<a href=\"admin/resume-add.php?resid=".$newRes->getResID()."\">Edit</a>";
-                            } 
+                        if (isset($_SESSION["level"])) {
+                            if ($_SESSION["level"] == 0) {
+                                echo "<a href=\"admin/resume-add.php?resid=" . $newRes->getResID() . "\">Edit</a>";
+                            }
                         }
                         ?>
 
@@ -582,15 +582,15 @@
                 <div class="card7 card">
                     <img src="<?php echo $newRes->getPicture(); ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="#">
+                        <a href="./View detail food/ViewDetailFoodOverall.php?key=<?php echo $newRes->getResID()?>">
                             <h5 class="card-title"><?php echo $newRes->getName(); ?></h5>
                         </a>
                         <p class="card-text"><?php echo $newRes->getAddress(); ?></p>
                         <?php
-                            if (isset($_SESSION["level"])){
-                            if ($_SESSION["level"] == 0){
-                                echo "<a href=\"admin/resume-add.php?resid=".$newRes->getResID()."\">Edit</a>";
-                            } 
+                        if (isset($_SESSION["level"])) {
+                            if ($_SESSION["level"] == 0) {
+                                echo "<a href=\"admin/resume-add.php?resid=" . $newRes->getResID() . "\">Edit</a>";
+                            }
                         }
                         ?>
                     </div>
@@ -602,15 +602,15 @@
                 <div class="card8 card">
                     <img src="<?php echo $newRes->getPicture(); ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="#">
+                        <a href="./View detail food/ViewDetailFoodOverall.php?key=<?php echo $newRes->getResID()?>">
                             <h5 class="card-title"><?php echo $newRes->getName(); ?></h5>
                         </a>
                         <p class="card-text"><?php echo $newRes->getAddress(); ?></p>
                         <?php
-                            if (isset($_SESSION["level"])){
-                            if ($_SESSION["level"] == 0){
-                                echo "<a href=\"admin/resume-add.php?resid=".$newRes->getResID()."\">Edit</a>";
-                            } 
+                        if (isset($_SESSION["level"])) {
+                            if ($_SESSION["level"] == 0) {
+                                echo "<a href=\"admin/resume-add.php?resid=" . $newRes->getResID() . "\">Edit</a>";
+                            }
                         }
                         ?>
                     </div>
@@ -622,15 +622,15 @@
                 <div class="card9 card">
                     <img src="<?php echo $newRes->getPicture(); ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="#">
+                        <a href="./View detail food/ViewDetailFoodOverall.php?key=<?php echo $newRes->getResID()?>">
                             <h5 class="card-title"><?php echo $newRes->getName(); ?></h5>
                         </a>
                         <p class="card-text"><?php echo $newRes->getAddress(); ?></p>
                         <?php
-                            if (isset($_SESSION["level"])){
-                            if ($_SESSION["level"] == 0){
-                                echo "<a href=\"admin/resume-add.php?resid=".$newRes->getResID()."\">Edit</a>";
-                            } 
+                        if (isset($_SESSION["level"])) {
+                            if ($_SESSION["level"] == 0) {
+                                echo "<a href=\"admin/resume-add.php?resid=" . $newRes->getResID() . "\">Edit</a>";
+                            }
                         }
                         ?>
                     </div>
@@ -642,15 +642,15 @@
                 <div class="card10 card">
                     <img src="<?php echo $newRes->getPicture(); ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <a href="#">
+                        <a href="./View detail food/ViewDetailFoodOverall.php?key=<?php echo $newRes->getResID()?>">
                             <h5 class="card-title"><?php echo $newRes->getName(); ?></h5>
                         </a>
                         <p class="card-text"><?php echo $newRes->getAddress(); ?></p>
                         <?php
-                            if (isset($_SESSION["level"])){
-                            if ($_SESSION["level"] == 0){
-                                echo "<a href=\"admin/resume-add.php?resid=".$newRes->getResID()."\">Edit</a>";
-                            } 
+                        if (isset($_SESSION["level"])) {
+                            if ($_SESSION["level"] == 0) {
+                                echo "<a href=\"admin/resume-add.php?resid=" . $newRes->getResID() . "\">Edit</a>";
+                            }
                         }
                         ?>
                     </div>
