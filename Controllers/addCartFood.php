@@ -35,7 +35,7 @@
                     window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
                 }
                 else{
-                    $("#myCart").text(response);
+                    $("#myCart_9").text(response);
                 }   
             }
         });
@@ -220,7 +220,7 @@
                     window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
                 }
                 else{
-                    $("#myCart_coffeehouse").text(response);
+                    $("#myCart_10").text(response);
                 }   
             }
         });
@@ -322,7 +322,7 @@
                     window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
                 }
                 else{
-                    $("#myCart_highlands").text(response);
+                    $("#myCart_15").text(response);
                 }   
             }
         });
@@ -411,4 +411,25 @@
         });
         document.cookie="food_19 = added";
     });
+
+    function addOverAll(id_num, name, link, price){
+        $.ajax({    //create an ajax to request 
+            type: "POST",
+            url: "../../Controllers/handleAdd.php",
+            dataType: "json",   
+            data: {"Add": "add", id:id_num, nameFood: name, linkImage:link, price:price, amount:1, totalprice:price,status:"Đã thêm"},        
+            success: function(response){
+                //alert(response.localeCompare("no account"));
+                if(response == "no account"){
+                    window.location.href = "http://localhost/BTL2/WebAssignment-master/Views/Login/Login.php";
+                }
+                else{
+                    $("#btn_add_overall"+id_num).hide();
+                    $("#added_overall"+id_num).show();
+                    $("#added_overall"+id_num).html(response);
+                }   
+            }
+        });
+        document.cookie="food_2"+id_num+"= added";
+    }
 </script>
