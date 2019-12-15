@@ -64,7 +64,7 @@ if (isset($_GET["key"])) {
                         <div class="row">
                             <div class="point">' . $r->getRating() . '</div>
                             <div class="resname ml-2">
-                                <a href="#" class="name-item"><b>' . $r->getName() . '</b></a>
+                                <a href="View detail food/ViewDetailFoodOverall.php?key='.$r->getResID().'" class="name-item"><b>' . $r->getName() . '</b></a>
                                 <div class="address">
                                     <p><b>' . $r->getAddress() . '</b></p>
                                 </div>
