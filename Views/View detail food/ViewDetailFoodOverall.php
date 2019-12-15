@@ -220,6 +220,35 @@
     </button>
   </nav>
 
+  <?php
+  include '../../Models/Restaurant.php';
+  include '../../Models/Food.php';
+  include '../../Controllers/connectDB.php';
+  include '../../Models/User.php';
+  include("../../Controllers/addCartFood.php");
+  $result = mysqli_query($conn, "SELECT * FROM user ORDER BY UserID ASC");
+  $list_user = array();
+  $row_count = $result->num_rows;
+  if ($row_count > 0) {
+    while ($row = mysqli_fetch_array($result)) {
+      $user = new User($row['UserID'], $row['UserName'], $row['Sex'], $row['AccountName'], $row['Password'], $row['UserLevel']);
+      array_push($list_user, $user);
+    }
+  }
+  for ($i = 0; $i < count($list_user); $i++) {
+    if ($username == $list_user[$i]->getAccountName()) {
+      if ($password == $list_user[$i]->getPassword()) {
+        $_SESSION['level'] = $list_user[$i]->getUserLevel();
+      }
+    }
+  }
+  $id = $_GET["key"];
+  $row = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM restaurant where ResID = $id"));
+  $newRes = new Restaurant($row["ResID"], $row["Address"], $row["Name"], $row["Rating"], $row["WorkTime"], $row["PictureRes"]);
+  $sql = "SELECT * FROM food WHERE ResID = $id";
+  $res = mysqli_query($conn, $sql);
+  ?>
+
   <!-- The Modal -->
   <div id="myModal" class="modal">
     <!-- Modal content -->
@@ -231,12 +260,12 @@
 
       <div class="modal-body">
         <div class="row">
-          <div class="col-lg-3 "><img class="img-food" alt="No image" src="bunchaca.jpg" /></div>
+          <div class="col-lg-3 "><img class="img-food" alt="No image" src="../<?php echo $newRes->getPicture(); ?>" /></div>
 
           <div class="col-lg-7 offset-lg-2">
             <h3>Chi tiết đơn hàng</h3>
             <div class="row">
-              <div class="col-lg-9 font-weight-bold text">Cô Út - Bún Chả Cá Miền Trung </div>
+              <div class="col-lg-9 font-weight-bold text"><?php echo $newRes->getName(); ?> </div>
               <div class="col-lg-3">
                 <h4>42.000đ</h4>
               </div>
@@ -282,34 +311,6 @@
       </div>
     </div>
   </div>
-
-  <?php
-  include '../../Models/Restaurant.php';
-  include '../../Models/Food.php';
-  include '../../Controllers/connectDB.php';
-  include '../../Models/User.php';
-  $result = mysqli_query($conn, "SELECT * FROM user ORDER BY UserID ASC");
-  $list_user = array();
-  $row_count = $result->num_rows;
-  if ($row_count > 0) {
-    while ($row = mysqli_fetch_array($result)) {
-      $user = new User($row['UserID'], $row['UserName'], $row['Sex'], $row['AccountName'], $row['Password'], $row['UserLevel']);
-      array_push($list_user, $user);
-    }
-  }
-  for ($i = 0; $i < count($list_user); $i++) {
-    if ($username == $list_user[$i]->getAccountName()) {
-      if ($password == $list_user[$i]->getPassword()) {
-        $_SESSION['level'] = $list_user[$i]->getUserLevel();
-      }
-    }
-  }
-  $id = $_GET["key"];
-  $row = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM restaurant where ResID = $id"));
-  $newRes = new Restaurant($row["ResID"], $row["Address"], $row["Name"], $row["Rating"], $row["WorkTime"], $row["PictureRes"]);
-  $sql = "SELECT * FROM food WHERE ResID = $id";
-  $res = mysqli_query($conn, $sql);
-  ?>
 
   <div class="detail-food clearfix">
     <div class="container">
@@ -489,8 +490,9 @@
                 </td>
 
                 <td>
-                  <p id="added_1">
-                    <p> <button type="button" class="btn btn-danger add-food" id="btn_add_1"> <i class="fas fa-plus"></i> </button>
+                  <p id="added_overall">
+                    <p> 
+                    <button type="button" class="btn btn-danger add-food" id="btn_add_overall<?php echo $food->getID(); ?>" onclick=addOverAll(<?php echo strval($food->getID()); ?>, <?php echo strval($food->getName()); ?>, <?php echo strval($food->getPicLink()); ?>, <?php echo strval($food->getPrice()); ?>);"> <i class="fas fa-plus"></i> </button>
                 </td>
               </tr>
               <?php }; ?>
