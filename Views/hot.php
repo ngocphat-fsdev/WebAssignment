@@ -16,133 +16,14 @@
 
 <body>
     <!--Header-->
-    <div id="intro-head">
-        <!-------------------------------------------------------------->
-        <div class="w3-section head-ad">
-            <img class="mySlides w3-animate-fading" src="./img/adv-head1.jpg" style="display: none;">
-            <img class="mySlides w3-animate-fading" src="./img/adv-head2.jpg" style="display: block;">
-        </div>
-        <!-------------------------------------------------------------->
-        <div id="header-menu">
-            <nav>
-                <div class="nav nav-tabs" id="nav-tab" role="tablist" style="height: 40px;">
-                    <a class="nav-item nav-link" id="nav-home-tab" href="homepage.php" role="tab"
-                        aria-controls="nav-home" aria-selected="false" target="_self"
-                        style="border-top-left-radius: 0;border-top-right-radius: 0;">
-                        <p>Trang Chủ</p>
-                    </a>
-                    <a class="nav-item nav-link active" id="nav-profile-tab" href="hot.php" role="tab"
-                        aria-controls="nav-profile" aria-selected="true" target="_self"
-                        style="border-top-left-radius: 0;border-top-right-radius: 0;">
-                        <p>Hot</p>
-                    </a>
-                    <a class="nav-item nav-link" id="nav-contact-tab" href="review.php" role="tab"
-                        aria-controls="nav-contact" aria-selected="false" target="_self"
-                        style="border-top-left-radius: 0;border-top-right-radius: 0;">
-                        <p>Review</p>
-                    </a>
-                    <a class="nav-item nav-link" id="nav-contact-tab" href="#" role="tab" aria-controls="nav-contact"
-                        aria-selected="true" target="_self"
-                        style="border-top-left-radius: 0;border-top-right-radius: 0;">
-                        <p>Đặt bàn</p>
-                    </a>
-                    <a class="nav-item nav-link" id="nav-contact-tab" href="#" role="tab" aria-controls="nav-contact"
-                        aria-selected="false" target="_self"
-                        style="border-top-left-radius: 0;border-top-right-radius: 0;">
-                        <p>Thảo luận</p>
-                    </a>
-                    <a class="nav-item nav-link" id="nav-contact-tab" href="#" role="tab" aria-controls="nav-contact"
-                        aria-selected="false" target="_self"
-                        style="border-top-left-radius: 0;border-top-right-radius: 0;">
-                        <p>Giảm giá</p>
-                    </a>
-                    <a class="nav-item nav-link" id="nav-contact-tab" href="contact.php" role="tab"
-                        aria-controls="nav-contact" aria-selected="false" target="_self"
-                        style="border-top-left-radius: 0;border-top-right-radius: 0;">
-                        <p>Liên hệ</p>
-                    </a>
-                </div>
-            </nav>
-        </div>
-        <!-------------------------------------------------------------->
-        <div class="pos-f-t headmenu-sm">
-            <div class="collapse" id="navbarToggleExternalContent">
-                <div class="bg-light p-4">
-                    <a class="nav-item nav-link active" id="nav-home-tab" href="homepage.php" role="tab"
-                        aria-controls="nav-home" aria-selected="false"
-                        style="border-top-left-radius: 0;border-top-right-radius: 0;">
-                        <p>Trang Chủ</p>
-                    </a>
-                    <a class="nav-item nav-link" id="nav-profile-tab" href="hot.php" role="tab"
-                        aria-controls="nav-profile" aria-selected="true"
-                        style="border-top-left-radius: 0;border-top-right-radius: 0;">
-                        <p>Hot</p>
-                    </a>
-                    <a class="nav-item nav-link" id="nav-contact-tab" href="review.php" role="tab"
-                        aria-controls="nav-contact" aria-selected="false"
-                        style="border-top-left-radius: 0;border-top-right-radius: 0;">
-                        <p>Review</p>
-                    </a>
-                    <a class="nav-item nav-link" id="nav-contact-tab" href="#" role="tab" aria-controls="nav-contact"
-                        aria-selected="true" style="border-top-left-radius: 0;border-top-right-radius: 0;">
-                        <p>Đặt Hàng</p>
-                    </a>
-                    <a class="nav-item nav-link" id="nav-contact-tab" href="#" role="tab" aria-controls="nav-contact"
-                        aria-selected="false" style="border-top-left-radius: 0;border-top-right-radius: 0;">
-                        <p>Thảo Luận</p>
-                    </a>
-                    <a class="nav-item nav-link" id="nav-contact-tab" href="#" role="tab" aria-controls="nav-contact"
-                        aria-selected="false" style="border-top-left-radius: 0;border-top-right-radius: 0;">
-                        <p>Giảm Giá</p>
-                    </a>
-                    <a class="nav-item nav-link" id="nav-contact-tab" href="contact.php" role="tab"
-                        aria-controls="nav-contact" aria-selected="false"
-                        style="border-top-left-radius: 0;border-top-right-radius: 0;">
-                        <p>Liên Hệ</p>
-                    </a>
-                </div>
-            </div>
-            <nav class="navbar navbar-dark bg-dark">
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </nav>
-        </div>
-        <!-------------------------------------------------------------------->
-        <nav class="nav justify-content-center login" style="background-color: #f8f9fa; position: relative;">
-            <span style="width: 100px; height: 38px;margin-right: 10px;margin-top: 7px;margin-left: 10px;">
-                <a href="Login/Login.php">Đăng Nhập</a>
-            </span>
-            <div class="dropdown" style="margin-right: 10px; height: 40px;">
-                <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false" class="btn btn-primary btn-circle">
-                    <i class="fa fa-bell" aria-hidden="true"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </div>
-            <div class="dropdown" style="margin-right: 10px; height: 40px;">
-                <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false" class="btn btn-warning">
-                    <i class="fa fa-plus" aria-hidden="true"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </div>
-            <button class="btn btn-secondary" type="button" aria-haspopup="true" aria-expanded="false"
-                style="height: 37px;">
-                <img src="./img/vn.png" style="width: 25px;vertical-align: 0;">
-            </button>
-        </nav>
-    </div>
+    <?php include "header.php"; ?>
+    <script>
+        $(document).ready(function(e) {
+            $(".nav").find(".active").removeClass("active");
+            $("#nav-hot-tab").addClass("active");
+            //document.location.href = "review.php";
+        })
+    </script>
 
     <div class="list-content">
         <ul class="list-news-item">
