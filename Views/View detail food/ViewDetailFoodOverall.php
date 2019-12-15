@@ -490,9 +490,8 @@
                 </td>
 
                 <td>
-                  <p id="added_overall">
-                    <p> 
-                    <button type="button" class="btn btn-danger add-food" id="btn_add_overall<?php echo $food->getID(); ?>" onclick=addOverAll(<?php echo strval($food->getID()); ?>, <?php echo strval($food->getName()); ?>, <?php echo strval($food->getPicLink()); ?>, <?php echo strval($food->getPrice()); ?>);"> <i class="fas fa-plus"></i> </button>
+                  <p id="added_overall2<?php echo $food->getID(); ?>"></p>
+                  <button type="button" class="btn btn-danger add-food" id="btn_add_overall2<?php echo $food->getID(); ?>" onclick='addOverAll("2<?php echo $food->getID(); ?>", "<?php echo $food->getName(); ?>", "<?php echo $food->getPicLink(); ?>", "<?php echo $food->getPrice();?>" )'> <i class="fas fa-plus"></i> </button>
                 </td>
               </tr>
               <?php }; ?>
