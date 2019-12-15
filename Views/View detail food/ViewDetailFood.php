@@ -341,7 +341,7 @@
           </div>
 
           <button type="button" class="btn btn-danger" id="myBtn"> <i class="fas fa-check-circle"></i> Đặt trước</button>
-          <button type="button" class="btn btn-danger btn-cart" id="myCart"> <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng</button>
+          <button type="button" class="btn btn-danger btn-cart" id="myCart_9"> <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng</button>
 
           <script>
           // Get the modal
